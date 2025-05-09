@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { Spotlight } from './ui/Spotlight';
 import { TextGenerateEffect } from './ui/TextGenerateEffect';
 import MagicButton from './ui/MagicButton';
 import { FaAngleDoubleDown } from 'react-icons/fa';
 
-const Hero = () => {
+const Hero = forwardRef<HTMLElement>((_, ref) => {
   return (
-    <section id="hero">
+    <section id="hero" ref={ref}>
       <div className="relative pb-20 pt-36">
         <div>
           <Spotlight className="-left-10 -top-40 h-screen md:-left-32 md:-top-20" fill="white" />
@@ -42,6 +42,6 @@ const Hero = () => {
       </div>
     </section>
   );
-};
+});
 
 export default Hero;

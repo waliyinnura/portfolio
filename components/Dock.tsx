@@ -2,7 +2,7 @@ import React from 'react';
 import { FloatingDock } from '@/components/ui/FloatingDock';
 import { IconHome, IconHourglass, IconInfoCircle } from '@tabler/icons-react';
 
-export function FloatingDockComponents() {
+export function FloatingDockComponents({heroRef}:{heroRef: React.RefObject<HTMLElement | null> }) {
   const links = [
     {
       title: 'Home',
@@ -23,7 +23,7 @@ export function FloatingDockComponents() {
   ];
   return (
     <div className="relative flex h-[35rem] w-full items-center justify-center">
-      <FloatingDock items={links} />
+      <FloatingDock items={links} heroRef={heroRef}/>
     </div>
   );
 }

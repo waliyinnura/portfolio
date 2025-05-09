@@ -20,16 +20,18 @@ import { useEffect, useRef, useState } from 'react';
 
 export const FloatingDock = ({
   items,
+  heroRef,
   desktopClassName,
   mobileClassName,
 }: {
   items: { title: string; icon: React.ReactNode; href: string }[];
+  heroRef: React.RefObject<HTMLElement | null>
   desktopClassName?: string;
   mobileClassName?: string;
 }) => {
   return (
     <>
-      <FloatingDockDesktop items={items} className={desktopClassName} />
+      <FloatingDockDesktop items={items} className={desktopClassName} heroRef={heroRef} />
       <FloatingDockMobile items={items} className={mobileClassName} />
     </>
   );
@@ -92,19 +94,21 @@ const FloatingDockMobile = ({
 
 const FloatingDockDesktop = ({
   items,
+  heroRef,
   className,
 }: {
   items: { title: string; icon: React.ReactNode; href: string }[];
+  heroRef: React.RefObject<HTMLElement | null>
   className?: string;
 }) => {
   const mouseX = useMotionValue(Infinity);
   const [visible, setVisible] = useState(false);
 
-  const heroRef = useRef<HTMLElement | null>(null);
+  // const heroRef = useRef<HTMLElement | null>(null);
 
-  useEffect(() => {
-    heroRef.current = document.getElementById('hero');
-  }, []);
+  // useEffect(() => {
+  //   heroRef.current = document.getElementById('hero');
+  // }, []);
 
   const inView = useInView(heroRef, { margin: '-100px 0px 0px 0px' });
   useEffect(() => {
