@@ -214,20 +214,20 @@ export const NavbarLogo = () => {
   );
 };
 
-export const NavbarButton = ({
-  href,
-  as: Tag = 'a',
-  children,
-  className,
-  variant = 'primary',
-  ...props
-}: {
-  href?: string;
-  as?: React.ElementType;
-  children: React.ReactNode;
-  className?: string;
+type NavbarButtonProps = {
+  type?: 'button' | 'submit' | 'reset';
   variant?: 'primary' | 'secondary' | 'dark' | 'gradient';
-} & (React.ComponentPropsWithoutRef<'a'> | React.ComponentPropsWithoutRef<'button'>)) => {
+  className?: string;
+  children: React.ReactNode;
+} & React.ButtonHTMLAttributes<HTMLButtonElement>;
+
+export const NavbarButton: React.FC<NavbarButtonProps> = ({
+  type = 'button',
+  variant = 'primary',
+  className,
+  children,
+  ...props
+}) => {
   const baseStyles =
     'px-4 py-2 rounded-md bg-white button bg-white text-black text-sm font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center';
 
@@ -241,12 +241,11 @@ export const NavbarButton = ({
   };
 
   return (
-    <Tag
-      href={href || undefined}
+    <button
       className={cn(baseStyles, variantStyles[variant], className)}
       {...props}
     >
       {children}
-    </Tag>
+    </button>
   );
 };
