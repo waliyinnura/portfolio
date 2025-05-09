@@ -44,4 +44,5 @@ const Hero = forwardRef<HTMLElement>((_, ref) => {
   );
 });
 
+Hero.displayName = 'Hero';
 export default Hero;
