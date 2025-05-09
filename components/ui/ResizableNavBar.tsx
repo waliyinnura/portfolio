@@ -215,14 +215,14 @@ export const NavbarLogo = () => {
 };
 
 type NavbarButtonProps = {
-  type?: 'button' | 'submit' | 'reset';
+  // type?: 'button' | 'submit' | 'reset';
   variant?: 'primary' | 'secondary' | 'dark' | 'gradient';
   className?: string;
   children: React.ReactNode;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const NavbarButton: React.FC<NavbarButtonProps> = ({
-  type = 'button',
+  // type = 'button',
   variant = 'primary',
   className,
   children,
