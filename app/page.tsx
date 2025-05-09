@@ -1,5 +1,6 @@
 'use client';
 
+import { Cards } from '@/components/Cards';
 import Grid from '@/components/Grid';
 import Hero from '@/components/Hero';
 import { ResizableNavbar } from '@/components/Navbar';
@@ -15,6 +16,7 @@ export default function Home() {
         <ResizableNavbar />
         <Hero ref={heroRef}/>
         <Grid />
+        <Cards />
         <WorkExperiences />
       </div>
     </main>
