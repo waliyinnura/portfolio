@@ -1,3 +1,5 @@
+'use client';
+
 import { FloatingDockComponents } from '@/components/Dock';
 import Grid from '@/components/Grid';
 import Hero from '@/components/Hero';
