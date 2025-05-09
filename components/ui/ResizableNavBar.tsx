@@ -1,7 +1,6 @@
 'use client';
 import { cn } from '@/lib/utils';
 import { IconMenu2, IconX } from '@tabler/icons-react';
-import { Loader2 } from 'lucide-react';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'motion/react';
 
 import React, { useRef, useState } from 'react';
@@ -175,7 +174,7 @@ export const MobileNavHeader = ({ children, className }: MobileNavHeaderProps) =
   );
 };
 
-export const MobileNavMenu = ({ children, className, isOpen, onClose }: MobileNavMenuProps) => {
+export const MobileNavMenu = ({ children, className, isOpen }: MobileNavMenuProps) => {
   return (
     <AnimatePresence>
       {isOpen && (
