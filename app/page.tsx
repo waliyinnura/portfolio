@@ -1,6 +1,5 @@
 'use client';
 
-import { FloatingDockComponents } from '@/components/Dock';
 import Grid from '@/components/Grid';
 import Hero from '@/components/Hero';
 import { ResizableNavbar } from '@/components/Navbar';
@@ -17,7 +16,6 @@ export default function Home() {
         <Hero ref={heroRef}/>
         <Grid />
         <WorkExperiences />
-        <FloatingDockComponents heroRef={heroRef}/>
       </div>
     </main>
   );
