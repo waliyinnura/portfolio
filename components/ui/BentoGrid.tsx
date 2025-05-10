@@ -6,8 +6,8 @@ import { useState } from 'react';
 import { IoCopyOutline } from 'react-icons/io5';
 import { BackgroundGradientAnimation } from './BackgroundGradientAnimation';
 import { GridGlobe } from './GridGlobe';
-import Lottie from 'react-lottie';
-import animationData from '@/data/confetti.json';
+// import Lottie from 'react-lottie';
+// import animationData from '@/data/confetti.json';
 
 export const BentoGrid = ({
   className,
@@ -51,14 +51,14 @@ export const BentoGridItem = ({
   const rightLists = ['NextJS', 'NestJS', 'MySQL'];
 
   const [copied, setCopied] = useState(false);
-  const defaultOptions = {
-    loop: copied,
-    autoplay: copied,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice',
-    },
-  };
+  // const defaultOptions = {
+  //   loop: copied,
+  //   autoplay: copied,
+  //   animationData: animationData,
+  //   rendererSettings: {
+  //     preserveAspectRatio: 'xMidYMid slice',
+  //   },
+  // };
 
   const handleCopy = () => {
     const text = 'waliyinnura@gmial.com';
@@ -147,7 +147,7 @@ export const BentoGridItem = ({
               {/* add handleCopy() for the copy the text */}
               <div className={`absolute -bottom-5 right-0 ${copied ? 'block' : 'block'}`}>
                 {/* <img src="/confetti.gif" alt="confetti" /> */}
-                <Lottie options={defaultOptions} height={200} width={400} />
+                {/* <Lottie options={defaultOptions} height={200} width={400} /> */}
               </div>
 
               <MagicButton
