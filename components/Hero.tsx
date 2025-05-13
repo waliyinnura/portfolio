@@ -1,17 +1,26 @@
-import React, { forwardRef } from 'react';
-import { Spotlight } from './ui/Spotlight';
-import { TextGenerateEffect } from './ui/TextGenerateEffect';
-import MagicButton from './ui/MagicButton';
-import { FaAngleDoubleDown } from 'react-icons/fa';
+import React, { forwardRef } from "react";
+import { Spotlight } from "./ui/Spotlight";
+import { TextGenerateEffect } from "./ui/TextGenerateEffect";
+import MagicButton from "./ui/MagicButton";
+import { FaAngleDoubleDown } from "react-icons/fa";
 
 const Hero = forwardRef<HTMLElement>((_, ref) => {
   return (
     <section id="hero" ref={ref}>
       <div className="relative pb-20 pt-36">
         <div>
-          <Spotlight className="-left-10 -top-40 h-screen md:-left-32 md:-top-20" fill="white" />
-          <Spotlight className="left-full top-10 h-[80vh] w-[50vw]" fill="rgba(197,179,88,0.3)" />
-          <Spotlight className="left-80 top-28 h-[80vh] w-[50vw]" fill="rgba(197,179,88,0.8)" />
+          <Spotlight
+            className="-left-10 -top-40 h-screen md:-left-32 md:-top-20"
+            fill="white"
+          />
+          <Spotlight
+            className="right-0 top-10 h-[80vh] w-[50vw]"
+            fill="rgba(197,179,88,0.3)"
+          />
+          <Spotlight
+            className="left-80 top-28 h-[80vh] w-[50vw]"
+            fill="rgba(197,179,88,0.8)"
+          />
         </div>
 
         <div className="absolute left-0 top-0 flex h-screen w-full items-center justify-center bg-black bg-grid-[rgba(197,179,88,0.1)]">
@@ -35,7 +44,11 @@ const Hero = forwardRef<HTMLElement>((_, ref) => {
             </p>
 
             <a href="#about">
-              <MagicButton title="Show my work" icon={<FaAngleDoubleDown />} position="right" />
+              <MagicButton
+                title="Show my work"
+                icon={<FaAngleDoubleDown />}
+                position="right"
+              />
             </a>
           </div>
         </div>
@@ -44,5 +57,5 @@ const Hero = forwardRef<HTMLElement>((_, ref) => {
   );
 });
 
-Hero.displayName = 'Hero';
+Hero.displayName = "Hero";
 export default Hero;

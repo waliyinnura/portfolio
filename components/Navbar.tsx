@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import {
   Navbar,
   NavBody,
@@ -9,15 +9,15 @@ import {
   MobileNavHeader,
   MobileNavToggle,
   MobileNavMenu,
-} from '@/components/ui/ResizableNavBar';
-import { navItems } from '@/data';
-import { useState } from 'react';
+} from "@/components/ui/ResizableNavBar";
+import { navItems } from "@/data";
+import { useState } from "react";
 
 export function ResizableNavbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full z-[999]">
       <Navbar>
         {/* Desktop Navigation */}
         <NavBody>
@@ -38,7 +38,10 @@ export function ResizableNavbar() {
             />
           </MobileNavHeader>
 
-          <MobileNavMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)}>
+          <MobileNavMenu
+            isOpen={isMobileMenuOpen}
+            onClose={() => setIsMobileMenuOpen(false)}
+          >
             {navItems.map((item, idx) => (
               <a
                 key={`mobile-link-${idx}`}
