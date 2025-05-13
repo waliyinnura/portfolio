@@ -1,8 +1,6 @@
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
-// import Image from "next/image";
-
 import { useState } from "react";
 
 export const HoverEffect = ({
@@ -24,7 +22,7 @@ export const HoverEffect = ({
   return (
     <div className="w-full">
       <div className="mx-auto max-w-7xl py-20 text-center">
-        <h1 className="text-4xl font-semibold text-black dark:text-white">
+        <h1 className="text-2xl md:text-4xl font-semibold text-black dark:text-white z-50">
           Look at <br />
           <span className="mt-1 text-4xl font-bold leading-none md:text-[6rem]">
             My Recent Projects
@@ -33,7 +31,7 @@ export const HoverEffect = ({
       </div>
       <div
         className={cn(
-          "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  py-10",
+          "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 pt-5",
           className
         )}
       >
