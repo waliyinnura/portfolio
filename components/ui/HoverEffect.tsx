@@ -130,7 +130,13 @@ export const CardImage = ({ img }: { img: string }) => {
         className="relative w-full max-w-md aspect-[3/2] overflow-hidden rounded-2xl"
         style={{ backgroundColor: "#13162D" }}
       >
-        <Image src={img} alt="cover" fill className="object-cover" />
+        <Image
+          src={img}
+          alt="cover"
+          fill
+          className="object-cover"
+          priority={true}
+        />
       </div>
     </div>
   );
