@@ -5,15 +5,15 @@ import MagicButton from "./ui/MagicButton";
 
 const Footer = () => {
   return (
-    <footer className="w-full pt-20 pb-5" id="testimonials">
+    <footer className="w-full pt-20 pb-5">
       {/* background grid */}
-      <div className="w-full absolute left-0 -bottom-72 min-h-96">
+      {/* <div className="w-full absolute left-0 -bottom-80 min-h-96">
         <img
           src="/footer-grid.svg"
           alt="grid"
-          className="w-full h-full opacity-50 "
+          className="w-full h-52 opacity-50 "
         />
-      </div>
+      </div> */}
 
       <div className="flex flex-col items-center">
         <h1 className="heading lg:max-w-[45vw]">
@@ -32,7 +32,7 @@ const Footer = () => {
         </a>
       </div>
       <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
-        <p className="md:text-base text-sm md:font-normal font-light">
+        <p className="md:text-base text-sm md:font-normal font-light pb-1">
           Copyright © 2025 Well
         </p>
 
