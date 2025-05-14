@@ -91,7 +91,7 @@ export const LinkPreview = ({
       >
         <HoverCardPrimitive.Trigger
           onMouseMove={handleMouseMove}
-          className={cn("text-black dark:text-white mb-8 text-3xl", className)}
+          className={cn(className)}
           href={url}
         >
           {children}
