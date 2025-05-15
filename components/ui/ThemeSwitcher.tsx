@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { Button } from "./Button";
 
 export function ThemeSwitcher() {
-  const { theme, setTheme, resolvedTheme } = useTheme();
+  const { setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {

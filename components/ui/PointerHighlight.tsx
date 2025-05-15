@@ -18,8 +18,9 @@ export function PointerHighlight({
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
-    if (containerRef.current) {
-      const { width, height } = containerRef.current.getBoundingClientRect();
+    const container = containerRef.current; // Store the current value of the ref
+    if (container) {
+      const { width, height } = container.getBoundingClientRect();
       setDimensions({ width, height });
     }
 
@@ -30,13 +31,13 @@ export function PointerHighlight({
       }
     });
 
-    if (containerRef.current) {
-      resizeObserver.observe(containerRef.current);
+    if (container) {
+      resizeObserver.observe(container);
     }
 
     return () => {
-      if (containerRef.current) {
-        resizeObserver.unobserve(containerRef.current);
+      if (container) {
+        resizeObserver.unobserve(container); // Use the stored variable here
       }
     };
   }, []);
