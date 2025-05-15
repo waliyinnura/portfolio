@@ -68,14 +68,14 @@ export const BentoGridItem = ({
   return (
     <div
       className={cn(
-        "group/bento relative row-span-1 flex flex-col justify-between space-y-4 overflow-hidden rounded-3xl border border-white/[0.1] shadow-input transition duration-200 hover:shadow-xl dark:shadow-none",
+        "group/bento bg-white-300 dark:bg-black-200 relative row-span-1 flex flex-col justify-between space-y-4 overflow-hidden rounded-3xl border border-white-300 dark:border-white/[0.1] shadow-input transition duration-200 hover:shadow-xl dark:shadow-none",
         className
       )}
-      style={{
-        background: "rgb(38, 38, 38)",
-        backgroundColor:
-          "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)",
-      }}
+      // style={{
+      //   background: "rgb(38, 38, 38)",
+      //   backgroundColor:
+      //     "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)",
+      // }}
     >
       <div className={`${id === 6 && "flex justify-center"} h-full`}>
         <div className="absolute h-full w-full">
@@ -111,7 +111,7 @@ export const BentoGridItem = ({
             "relative flex min-h-40 flex-col p-5 px-5 transition duration-200 group-hover/bento:translate-x-2 md:h-full lg:p-10"
           )}
         >
-          <div className="z-10 font-sans text-sm font-extralight text-[#C1C2D3] md:max-w-32 md:text-xs lg:text-base">
+          <div className="z-10 font-sans text-sm font-extralight text-black-200 md:max-w-32 md:text-xs lg:text-base">
             {description}
           </div>
           <div
@@ -130,19 +130,19 @@ export const BentoGridItem = ({
                 {leftLists.map((item, i) => (
                   <span
                     key={i}
-                    className="rounded-lg bg-stone-700 px-3 py-2 text-center text-xs opacity-50 lg:px-3 lg:py-4 lg:text-base lg:opacity-100"
+                    className="rounded-lg bg-white dark:bg-stone-700 px-3 py-2 text-center text-xs opacity-50 lg:px-3 lg:py-4 lg:text-base lg:opacity-100"
                   >
                     {item}
                   </span>
                 ))}
-                <span className="rounded-lg bg-stone-700 px-3 py-4 text-center lg:px-3 lg:py-4"></span>
+                <span className="rounded-lg bg-white dark:bg-stone-700 px-3 py-4 text-center lg:px-3 lg:py-4"></span>
               </div>
               <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
-                <span className="rounded-lg bg-stone-700 px-3 py-4 text-center lg:px-3 lg:py-4"></span>
+                <span className="rounded-lg bg-white dark:bg-stone-700 px-3 py-4 text-center lg:px-3 lg:py-4"></span>
                 {rightLists.map((item, i) => (
                   <span
                     key={i}
-                    className="rounded-lg bg-stone-700 px-3 py-2 text-center text-xs opacity-50 lg:px-3 lg:py-4 lg:text-base lg:opacity-100"
+                    className="rounded-lg bg-white dark:bg-stone-700 px-3 py-2 text-center text-xs opacity-50 lg:px-3 lg:py-4 lg:text-base lg:opacity-100"
                   >
                     {item}
                   </span>

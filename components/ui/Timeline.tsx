@@ -3,6 +3,8 @@ import { useScroll, useTransform, motion } from "motion/react";
 import React, { useEffect, useRef, useState } from "react";
 import { LinkPreview } from "./LinkPreview";
 import { Lens } from "./Lens";
+import { PointerHighlight } from "./PointerHighlight";
+import { AnimatedTooltip } from "./AnimatedTooltip";
 
 interface TimelineEntry {
   id: number;
@@ -13,7 +15,7 @@ interface TimelineEntry {
   jobDesc: string;
   urlPreview: string;
   img: string[];
-  iconLists: string[];
+  iconLists: [];
 }
 
 export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
@@ -42,7 +44,14 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         <h1 className="text-2xl md:text-4xl font-semibold text-black dark:text-white">
           This is <br />
           <span className="mt-1 text-4xl font-bold leading-none md:text-[6rem]">
-            My Experiences
+            My
+            <PointerHighlight
+              rectangleClassName="bg-[#f0c46a] dark:bg-gold border-gold dark:border-gold leading-loose opacity-70"
+              pointerClassName="text-stone-200 h-3 w-3"
+              containerClassName="inline-block mx-1"
+            >
+              <span className="relative z-10">Experiences</span>
+            </PointerHighlight>
           </span>
         </h1>
       </div>
@@ -66,7 +75,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               <h3 className="mb-4 block text-left text-2xl font-bold text-neutral-500 dark:text-neutral-500 md:hidden">
                 {item.title}
               </h3>
-              <div>
+              <div className="relative">
                 <LinkPreview
                   url="https://github.com/waliyinnura?tab=repositories"
                   className="font-bold text-black dark:text-white mb-8 text-xl md:text-3xl"
@@ -96,18 +105,8 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                 <p className="mt-8 text-xs font-bold text-neutral-800 dark:text-neutral-200 md:text-sm">
                   What I learn here
                 </p>
-                <div className="flex items-center py-5">
-                  {item.iconLists.map((icon, index) => (
-                    <div
-                      key={index}
-                      className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
-                      style={{
-                        transform: `translateX(-${5 * index + 2}px)`,
-                      }}
-                    >
-                      <img src={icon} alt="icon5" className="p-2" />
-                    </div>
-                  ))}
+                <div className="relative flex items-center py-5">
+                  <AnimatedTooltip items={item.iconLists} />
                 </div>
               </div>
             </div>

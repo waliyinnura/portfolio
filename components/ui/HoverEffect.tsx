@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
 import { useState } from "react";
+import { MovingBorder } from "./MovingBorder";
 
 export const HoverEffect = ({
   items,
@@ -60,6 +61,18 @@ export const HoverEffect = ({
                 />
               )}
             </AnimatePresence>
+            <div className="absolute inset-0 rounded-2xl h-full w-full p-4 overflow-hidden">
+              <MovingBorder rx="30%" ry="30%">
+                <div
+                  className={cn("h-20 w-20 opacity-[0.8]")}
+                  style={{
+                    background:
+                      "linear-gradient(90deg,rgba(255, 255, 255, 1) 0%, rgba(255, 252, 224, 1) 50%, rgba(255, 200, 112, 1) 100%)",
+                    borderRadius: "rounded-2xl",
+                  }}
+                />
+              </MovingBorder>
+            </div>
             <Card>
               <CardImage img={item.img} />
               <CardTitle>{item.title}</CardTitle>
@@ -82,7 +95,7 @@ export const Card = ({
   return (
     <div
       className={cn(
-        "rounded-2xl h-full w-full p-4 overflow-hidden bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20 ",
+        "rounded-2xl h-full w-full p-4 overflow-hidden bg-white-300 dark:bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20",
         className
       )}
     >
@@ -100,7 +113,12 @@ export const CardTitle = ({
   children: React.ReactNode;
 }) => {
   return (
-    <h4 className={cn("text-zinc-100 font-bold tracking-wide my-2", className)}>
+    <h4
+      className={cn(
+        "text-black-200 dark:text-zinc-100 font-bold tracking-wide my-2",
+        className
+      )}
+    >
       {children}
     </h4>
   );
@@ -115,7 +133,7 @@ export const CardDescription = ({
   return (
     <p
       className={cn(
-        "my-1 text-zinc-400 tracking-wide leading-relaxed text-sm",
+        "my-1 text-black dark:text-zinc-400 tracking-wide leading-relaxed text-sm",
         className
       )}
     >

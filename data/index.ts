@@ -8,7 +8,7 @@ export const navItems = [
   { name: 'About', link: '#about' },
   { name: 'Projects', link: '#projects' },
   { name: 'Experiences', link: '#experiences' },
-  { name: 'Testimonials', link: '#testimonials' },
+  { name: 'Phase', link: '#phase' },
 ];
 
 export const gridItems = [
@@ -19,7 +19,7 @@ export const gridItems = [
     className: 'lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]',
     imgClassName: 'w-full h-full',
     titleClassName: 'justify-end',
-    img: '/laptop-gold.png',
+    img: '/laptop-1.svg',
     spareImg: '',
   },
   {
@@ -186,9 +186,23 @@ export const workExperience = [
     jobDesc: 'Built and Maintain all project services',
     urlPreview: '',
     img: ['/b1.svg', '/b1.svg', '/b1.svg'],
-    iconLists: ['/next.svg', '/tail.svg', '/ts.svg', '/stream.svg', '/c.svg']
-    // className: 'md:col-span-2',
-    // thumbnail: '/exp1.svg',
+    iconLists: [
+      {
+        id: 1,
+        name: "Next.js",
+        image: '/next.svg'
+      },
+      {
+        id: 2,
+        name: "Tailwind CSS",
+        image: '/tail.svg'
+      },
+      {
+        id: 3,
+        name: "Typescript",
+        image: '/ts.svg'
+      },
+    ]
   },
   {
     id: 2,
@@ -199,9 +213,23 @@ export const workExperience = [
     jobDesc: 'Built and Maintain',
     urlPreview: '',
     img: ['/b1.svg', '/b1.svg'],
-    iconLists: ['/next.svg', '/tail.svg', '/ts.svg', '/stream.svg', '/c.svg']
-    // className: 'md:col-span-2', // change to md:col-span-2
-    // thumbnail: '/exp2.svg',
+    iconLists: [
+      {
+        id: 1,
+        name: "Next.js",
+        image: '/next.svg'
+      },
+      {
+        id: 2,
+        name: "Tailwind CSS",
+        image: '/tail.svg'
+      },
+      {
+        id: 3,
+        name: "Typescript",
+        image: '/ts.svg'
+      },
+    ]
   },
   {
     id: 3,
@@ -212,9 +240,23 @@ export const workExperience = [
     jobDesc: 'Built and Maintain',
     urlPreview: '',
     img: ['/b1.svg'],
-    iconLists: ['/next.svg', '/tail.svg', '/ts.svg', '/stream.svg', '/c.svg']
-    // className: 'md:col-span-2', // change to md:col-span-2
-    // thumbnail: '/exp3.svg',
+    iconLists: [
+      {
+        id: 1,
+        name: "Next.js",
+        image: '/next.svg'
+      },
+      {
+        id: 2,
+        name: "Tailwind CSS",
+        image: '/tail.svg'
+      },
+      {
+        id: 3,
+        name: "Typescript",
+        image: '/ts.svg'
+      },
+    ]
   },
 ];
 
@@ -222,13 +264,16 @@ export const socialMedia = [
   {
     id: 1,
     img: '/git.svg',
+    url: 'https://github.com/waliyinnura'
   },
   {
     id: 2,
-    img: '/twit.svg',
+    img: '/insta.svg',
+    url: 'https://www.instagram.com/waliyinnura'
   },
   {
     id: 3,
     img: '/link.svg',
+    url: 'https://www.linkedin.com/in/waliyinnura'
   },
 ];
