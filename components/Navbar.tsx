@@ -11,7 +11,7 @@ import {
   MobileNavMenu,
 } from "@/components/ui/ResizableNavBar";
 import { navItems } from "@/data";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { ThemeSwitcher } from "./ui/ThemeSwitcher";
 
 export function ResizableNavbar() {
@@ -26,7 +26,7 @@ export function ResizableNavbar() {
           <NavItems items={navItems} />
           <div className="flex gap-4">
             <ThemeSwitcher />
-            <NavbarButton variant="primary">Book a call</NavbarButton>
+            <NavbarButton variant="secondary">Book a call</NavbarButton>
           </div>
         </NavBody>
 

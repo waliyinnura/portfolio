@@ -20,7 +20,7 @@ const Hero = forwardRef<HTMLElement>((_, ref) => {
           />
         </div>
 
-        <div className="absolute left-0 top-0 flex h-screen w-full items-center justify-center bg-white dark:bg-black bg-grid-gold opacity-15">
+        <div className="absolute left-0 top-0 flex h-screen w-full items-center justify-center bg-white dark:bg-black bg-dot-gold opacity-50 dark:opacity-15">
           {/* Radial gradient for the container to give a faded look */}
           <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white dark:bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_10%,black)]"></div>
         </div>
