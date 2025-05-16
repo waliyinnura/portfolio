@@ -1,7 +1,6 @@
 import React from "react";
 import { BentoGrid, BentoGridItem } from "./ui/BentoGrid";
 import { gridItems } from "@/data";
-import AnimatedSection from "./AnimatedSection";
 
 const Grid = () => {
   return (

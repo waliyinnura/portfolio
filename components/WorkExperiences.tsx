@@ -1,6 +1,5 @@
 import React from "react";
 import { Timeline } from "./ui/Timeline";
-import AnimatedSection from "./AnimatedSection";
 import { workExperience } from "@/data";
 
 const WorkExperiences = () => {

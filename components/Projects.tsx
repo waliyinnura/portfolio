@@ -2,7 +2,6 @@
 import React from "react";
 import { HoverEffect } from "./ui/HoverEffect";
 import { projects } from "@/data";
-import AnimatedSection from "./AnimatedSection";
 import { LinkPreview } from "./ui/LinkPreview";
 
 export function Projects() {

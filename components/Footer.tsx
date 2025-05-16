@@ -8,15 +8,6 @@ const Footer = () => {
   const year = new Date().getFullYear();
   return (
     <footer className="w-full pt-20 pb-5 bg-[url('/footer-grid.svg')] bg-cover bg-center">
-      {/* background grid */}
-      {/* <div className="w-full absolute left-0 -bottom-80 min-h-96">
-        <img
-          src="/footer-grid.svg"
-          alt="grid"
-          className="w-full h-52 opacity-50 "
-        />
-      </div> */}
-
       <div className="flex flex-col items-center">
         <h1 className="heading lg:max-w-[45vw]">
           Ready to take your digital presence to the next level?
