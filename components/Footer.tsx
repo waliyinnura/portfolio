@@ -5,6 +5,7 @@ import MagicButton from "./ui/MagicButton";
 import Image from "next/image";
 
 const Footer = () => {
+  const year = new Date().getFullYear();
   return (
     <footer className="w-full pt-20 pb-5 bg-[url('/footer-grid.svg')] bg-cover bg-center">
       {/* background grid */}
@@ -34,7 +35,7 @@ const Footer = () => {
       </div>
       <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
         <p className="md:text-base text-sm md:font-normal font-light pb-1">
-          Copyright © 2025 Well
+          Copyright © {year} Well
         </p>
 
         <div className="flex items-center md:gap-3 gap-6">

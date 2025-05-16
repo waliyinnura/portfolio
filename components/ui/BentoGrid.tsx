@@ -6,8 +6,6 @@ import { useState } from "react";
 import { IoCopyOutline } from "react-icons/io5";
 import { BackgroundGradientAnimation } from "./BackgroundGradientAnimation";
 import { GridGlobe } from "./GridGlobe";
-// import Lottie from 'react-lottie';
-// import animationData from '@/data/confetti.json';
 
 export const BentoGrid = ({
   className,
@@ -51,14 +49,6 @@ export const BentoGridItem = ({
   const rightLists = ["NextJS", "NestJS", "MySQL"];
 
   const [copied, setCopied] = useState(false);
-  // const defaultOptions = {
-  //   loop: copied,
-  //   autoplay: copied,
-  //   animationData: animationData,
-  //   rendererSettings: {
-  //     preserveAspectRatio: 'xMidYMid slice',
-  //   },
-  // };
 
   const handleCopy = () => {
     const text = "waliyinnura@gmail.com";
@@ -71,11 +61,6 @@ export const BentoGridItem = ({
         "group/bento bg-white-300 dark:bg-black-200 relative row-span-1 flex flex-col justify-between space-y-4 overflow-hidden rounded-3xl border border-white-300 dark:border-white/[0.1] shadow-input transition duration-200 hover:shadow-xl dark:shadow-none",
         className
       )}
-      // style={{
-      //   background: "rgb(38, 38, 38)",
-      //   backgroundColor:
-      //     "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)",
-      // }}
     >
       <div className={`${id === 6 && "flex justify-center"} h-full`}>
         <div className="absolute h-full w-full">
@@ -94,16 +79,11 @@ export const BentoGridItem = ({
             <img
               src={spareImg}
               alt={spareImg}
-              //   width={220}
               className="h-full w-full object-cover object-center"
             />
           )}
         </div>
-        {id === 6 && (
-          <BackgroundGradientAnimation>
-            {/* <div className="pointer-events-none absolute inset-0 z-50 flex items-center justify-center px-4 text-center text-3xl font-bold text-white md:text-4xl lg:text-7xl"></div> */}
-          </BackgroundGradientAnimation>
-        )}
+        {id === 6 && <BackgroundGradientAnimation />}
 
         <div
           className={cn(
@@ -122,10 +102,8 @@ export const BentoGridItem = ({
 
           {id === 2 && <GridGlobe />}
 
-          {/* Tech stack list div */}
           {id === 3 && (
             <div className="absolute -right-3 flex w-fit gap-1 lg:-right-2 lg:gap-5">
-              {/* tech stack lists */}
               <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
                 {leftLists.map((item, i) => (
                   <span
@@ -152,17 +130,6 @@ export const BentoGridItem = ({
           )}
           {id === 6 && (
             <div className="relative mt-5">
-              {/* button border magic from tailwind css buttons  */}
-              {/* add rounded-md h-8 md:h-8, remove rounded-full */}
-              {/* remove focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 */}
-              {/* add handleCopy() for the copy the text */}
-              <div
-                className={`absolute -bottom-5 right-0 ${copied ? "block" : "block"}`}
-              >
-                {/* <img src="/confetti.gif" alt="confetti" /> */}
-                {/* <Lottie options={defaultOptions} height={200} width={400} /> */}
-              </div>
-
               <MagicButton
                 title={copied ? "Email is Copied!" : "Copy my email address"}
                 icon={<IoCopyOutline />}

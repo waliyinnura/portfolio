@@ -2,10 +2,10 @@
 import { useScroll, useTransform, motion } from "motion/react";
 import React, { useEffect, useRef, useState } from "react";
 import { LinkPreview } from "./LinkPreview";
-import { Lens } from "./Lens";
-import { PointerHighlight } from "./PointerHighlight";
 import { AnimatedTooltip } from "./AnimatedTooltip";
 import Image from "next/image";
+import { FlipWords } from "./FlipWords";
+import { words } from "@/data";
 
 interface TimelineEntry {
   id: number;
@@ -41,18 +41,12 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   return (
     <div className="w-full bg-white font-sans dark:bg-black" ref={containerRef}>
-      <div className="mx-auto max-w-7xl py-20 text-center">
+      <div className="mx-auto max-w-7xl py-20 text-center justify-center">
         <h1 className="text-2xl md:text-4xl font-semibold text-black dark:text-white">
-          This is <br />
+          This is my
+          <br />
           <span className="mt-1 text-4xl font-bold leading-none md:text-[6rem]">
-            My
-            <PointerHighlight
-              rectangleClassName="bg-[#f0c46a] dark:bg-gold border-gold dark:border-gold leading-loose opacity-70"
-              pointerClassName="text-stone-200 h-3 w-3"
-              containerClassName="inline-block mx-1"
-            >
-              <span className="relative z-10">Experiences</span>
-            </PointerHighlight>
+            <FlipWords words={words} />
           </span>
         </h1>
       </div>
@@ -87,6 +81,9 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                 >
                   {item.company}
                 </LinkPreview>
+                <p className="mb-8 pt-2 text-xs font-normal text-neutral-800 dark:text-neutral-200 md:text-sm">
+                  {item.desc}
+                </p>
                 <p className="mt-8 mb-2 text-xs font-bold text-neutral-800 dark:text-neutral-200 md:text-sm">
                   What I do here
                 </p>
@@ -95,17 +92,15 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                 </p>
                 <div className="grid grid-cols-2 gap-4">
                   {item.img.map((image, index) => (
-                    <Lens key={index}>
-                      <Image
-                        key={index}
-                        src={image}
-                        alt={item.company + "image" + index}
-                        width={500}
-                        height={500}
-                        priority={true}
-                        className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-                      />
-                    </Lens>
+                    <Image
+                      key={index}
+                      src={image}
+                      alt={item.company + "image" + index}
+                      width={500}
+                      height={500}
+                      priority={true}
+                      className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+                    />
                   ))}
                 </div>
                 <p className="mt-8 text-xs font-bold text-neutral-800 dark:text-neutral-200 md:text-sm">
@@ -129,7 +124,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               height: heightTransform,
               opacity: opacityTransform,
             }}
-            className="absolute inset-x-0 top-0 w-[2px] rounded-full bg-gradient-to-t from-stone-600 from-[0%] via-orange-300 via-[10%] to-transparent"
+            className="absolute inset-x-0 top-0 w-[2px] rounded-full bg-gradient-to-t from-stone-50 dark:from-stone-600 from-[0%] via-orange-300 dark:via-orange-300 via-[10%] to-transparent"
           />
         </div>
       </div>

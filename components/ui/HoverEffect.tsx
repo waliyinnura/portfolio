@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
 import { useState } from "react";
 import { MovingBorder } from "./MovingBorder";
+import { PointerHighlight } from "./PointerHighlight";
 
 export const HoverEffect = ({
   items,
@@ -26,7 +27,14 @@ export const HoverEffect = ({
         <h1 className="text-2xl md:text-4xl font-semibold text-black dark:text-white z-50">
           Look at <br />
           <span className="mt-1 text-4xl font-bold leading-none md:text-[6rem]">
-            My Recent Projects
+            My Recent
+            <PointerHighlight
+              rectangleClassName="bg-[#f0c46a] dark:bg-gold border-gold dark:border-gold leading-loose opacity-70"
+              pointerClassName="text-stone-600 h-3 w-3"
+              containerClassName="inline-block mx-1"
+            >
+              <span className="relative z-10">Projects</span>
+            </PointerHighlight>
           </span>
         </h1>
       </div>

@@ -5,13 +5,11 @@ import { workExperience } from "@/data";
 
 const WorkExperiences = () => {
   return (
-    <AnimatedSection>
-      <section id="experiences">
-        <div className="relative w-full overflow-clip">
-          <Timeline data={workExperience} />
-        </div>
-      </section>
-    </AnimatedSection>
+    <section id="experiences">
+      <div className="relative w-full overflow-clip">
+        <Timeline data={workExperience} />
+      </div>
+    </section>
   );
 };
 
