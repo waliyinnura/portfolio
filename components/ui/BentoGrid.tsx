@@ -58,7 +58,7 @@ export const BentoGridItem = ({
   return (
     <div
       className={cn(
-        "group/bento bg-white-300 dark:bg-black-200 relative row-span-1 flex flex-col justify-between space-y-4 overflow-hidden rounded-3xl border border-white-300 dark:border-white/[0.1] shadow-input transition duration-200 hover:shadow-xl dark:shadow-none",
+        "group/bento bg-neutral-300 dark:bg-black-200 relative row-span-1 flex flex-col justify-between space-y-4 overflow-hidden rounded-3xl border border-white-300 dark:border-white/[0.1] shadow-input transition duration-200 hover:shadow-xl dark:shadow-none",
         className
       )}
     >
@@ -108,7 +108,7 @@ export const BentoGridItem = ({
                 {leftLists.map((item, i) => (
                   <span
                     key={i}
-                    className="rounded-lg bg-white dark:bg-stone-700 px-3 py-2 text-center text-xs opacity-50 lg:px-3 lg:py-4 lg:text-base lg:opacity-100"
+                    className="rounded-lg bg-neutral-200 dark:bg-stone-700 px-3 py-2 text-center text-xs opacity-50 lg:px-3 lg:py-4 lg:text-base lg:opacity-100"
                   >
                     {item}
                   </span>
@@ -120,7 +120,7 @@ export const BentoGridItem = ({
                 {rightLists.map((item, i) => (
                   <span
                     key={i}
-                    className="rounded-lg bg-white dark:bg-stone-700 px-3 py-2 text-center text-xs opacity-50 lg:px-3 lg:py-4 lg:text-base lg:opacity-100"
+                    className="rounded-lg bg-neutral-200 dark:bg-stone-700 px-3 py-2 text-center text-xs opacity-50 lg:px-3 lg:py-4 lg:text-base lg:opacity-100"
                   >
                     {item}
                   </span>

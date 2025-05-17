@@ -1,8 +1,6 @@
 //Example
 
-// import { goGet } from '@/services/service';
-
-// export const getListTest = await goGet('test/list');
+// import { getList } from "@/services/service";
 
 export const navItems = [
   { name: "About", link: "#about" },

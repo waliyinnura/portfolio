@@ -29,7 +29,7 @@ export const HoverEffect = ({
           <span className="mt-1 text-4xl font-bold leading-none md:text-[6rem]">
             My Recent
             <PointerHighlight
-              rectangleClassName="bg-[#f0c46a] dark:bg-gold border-gold dark:border-gold leading-loose opacity-70"
+              rectangleClassName="bg-neutral-400 border-neutral-400 leading-loose opacity-50"
               pointerClassName="text-stone-600 h-3 w-3"
               containerClassName="inline-block mx-1"
             >
