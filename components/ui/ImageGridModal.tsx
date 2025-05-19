@@ -5,8 +5,9 @@ import { AnimatePresence, motion } from "motion/react";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
 import React, { useState } from "react";
+import { TimelineEntry } from "./Timeline";
 
-const ImageGridWithModal = ({ item }: { item: any }) => {
+const ImageGridWithModal = ({ item }: { item: TimelineEntry }) => {
   const { open, setOpen } = useModal();
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
@@ -80,7 +81,7 @@ const ImageGridWithModal = ({ item }: { item: any }) => {
   );
 };
 
-const AnimatedImageGridModal = ({ item }: { item: any }) => (
+const AnimatedImageGridModal = ({ item }: { item: TimelineEntry }) => (
   <ModalProvider>
     <ImageGridWithModal item={item} />
   </ModalProvider>

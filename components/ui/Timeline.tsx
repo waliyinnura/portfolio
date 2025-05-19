@@ -3,12 +3,11 @@ import { useScroll, useTransform, motion } from "motion/react";
 import React, { useEffect, useRef, useState } from "react";
 import { LinkPreview } from "./LinkPreview";
 import { AnimatedTooltip } from "./AnimatedTooltip";
-import Image from "next/image";
 import { FlipWords } from "./FlipWords";
 import { words } from "@/data";
 import AnimatedImageGridModal from "./ImageGridModal";
 
-interface TimelineEntry {
+export interface TimelineEntry {
   id: number;
   title: string;
   subTitle: string;
@@ -24,18 +23,6 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState(null);
-
-  const openModal = (image: React.SetStateAction<null>) => {
-    setSelectedImage(image);
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setSelectedImage(null);
-  };
 
   useEffect(() => {
     if (ref.current) {
