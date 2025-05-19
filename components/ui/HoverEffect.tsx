@@ -70,7 +70,7 @@ export const HoverEffect = ({
                 />
               )}
             </AnimatePresence>
-            <div className="absolute inset-0 rounded-2xl block h-full w-full overflow-hidden">
+            <div className="absolute inset-0 rounded-2xl h-full w-full overflow-hidden">
               <MovingBorder rx="30%" ry="30%">
                 <div
                   className={cn("h-20 w-20 opacity-[0.8] blur-2xl")}
