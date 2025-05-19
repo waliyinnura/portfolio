@@ -6,6 +6,7 @@ import { AnimatedTooltip } from "./AnimatedTooltip";
 import Image from "next/image";
 import { FlipWords } from "./FlipWords";
 import { words } from "@/data";
+import AnimatedImageGridModal from "./ImageGridModal";
 
 interface TimelineEntry {
   id: number;
@@ -23,6 +24,18 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const openModal = (image: React.SetStateAction<null>) => {
+    setSelectedImage(image);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedImage(null);
+  };
 
   useEffect(() => {
     if (ref.current) {
@@ -40,7 +53,10 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
   return (
-    <div className="w-full bg-white font-sans dark:bg-black" ref={containerRef}>
+    <div
+      className="relative w-full bg-white font-sans dark:bg-black"
+      ref={containerRef}
+    >
       <div className="mx-auto max-w-7xl py-20 text-center justify-center">
         <h1 className="text-2xl md:text-4xl font-semibold text-black dark:text-white">
           This is my
@@ -91,7 +107,8 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                   {item.jobDesc}
                 </p>
                 <div className="grid grid-cols-2 gap-4">
-                  {item.img.map((image, index) => (
+                  <AnimatedImageGridModal item={item} />
+                  {/* {item.img.map((image, index) => (
                     <Image
                       key={index}
                       src={image}
@@ -99,9 +116,9 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                       width={500}
                       height={500}
                       priority={true}
-                      className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+                      className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60 cursor-pointer"
                     />
-                  ))}
+                  ))} */}
                 </div>
                 <p className="mt-8 text-xs font-bold text-neutral-800 dark:text-neutral-200 md:text-sm">
                   What I learn here

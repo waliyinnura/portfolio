@@ -30,7 +30,7 @@ export const HoverEffect = ({
             My Recent
             <PointerHighlight
               rectangleClassName="bg-neutral-400 border-neutral-400 leading-loose opacity-50"
-              pointerClassName="text-stone-600 h-3 w-3"
+              pointerClassName="text-stone-600 h-5 w-5"
               containerClassName="inline-block mx-1"
             >
               <span className="relative z-10">Projects</span>
@@ -47,6 +47,7 @@ export const HoverEffect = ({
         {items.map((item, idx) => (
           <a
             href={item?.link}
+            target="_blank"
             key={item?.link}
             className="relative group block p-2 h-full w-full"
             onMouseEnter={() => setHoveredIndex(idx)}
@@ -55,7 +56,7 @@ export const HoverEffect = ({
             <AnimatePresence>
               {hoveredIndex === idx && (
                 <motion.span
-                  className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-slate-800/[0.8] block  rounded-3xl"
+                  className="absolute inset-0 h-full w-full bg-neutral-400 dark:bg-slate-400/[0.8] block  rounded-3xl"
                   layoutId="hoverBackground"
                   initial={{ opacity: 0 }}
                   animate={{
@@ -69,14 +70,14 @@ export const HoverEffect = ({
                 />
               )}
             </AnimatePresence>
-            <div className="absolute inset-0 rounded-2xl h-full w-full p-4 overflow-hidden">
+            <div className="absolute inset-0 rounded-2xl block h-full w-full overflow-hidden">
               <MovingBorder rx="30%" ry="30%">
                 <div
-                  className={cn("h-20 w-20 opacity-[0.8]")}
+                  className={cn("h-20 w-20 opacity-[0.8] blur-2xl")}
                   style={{
                     background:
-                      "linear-gradient(90deg,rgba(255, 255, 255, 1) 0%, rgba(255, 252, 224, 1) 50%, rgba(255, 200, 112, 1) 100%)",
-                    borderRadius: "rounded-2xl",
+                      "linear-gradient(90deg,rgba(181, 201, 255, 1) 0%, rgba(69, 107, 222, 1) 50%, rgba(0, 89, 255, 1) 100%)",
+                    borderRadius: "20px",
                   }}
                 />
               </MovingBorder>
@@ -103,7 +104,7 @@ export const Card = ({
   return (
     <div
       className={cn(
-        "rounded-2xl h-full w-full p-4 overflow-hidden bg-white-300 dark:bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20",
+        "rounded-2xl h-full w-full p-4 overflow-hidden bg-neutral-200 dark:bg-black-200 border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20",
         className
       )}
     >

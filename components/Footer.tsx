@@ -7,10 +7,11 @@ import Image from "next/image";
 const Footer = () => {
   const year = new Date().getFullYear();
   return (
-    <footer className="w-full pt-20 pb-5 px-5 bg-[url('/footer-grid.svg')] bg-cover bg-center">
+    <footer className="relative w-full pt-20 pb-5 px-5 bg-[url('/footer-grid.svg')] bg-cover bg-center">
       <div className="flex flex-col items-center">
         <h1 className="heading lg:max-w-[45vw]">
-          Ready to take your digital presence to the next level?
+          Ready to take <span className="text-blue-300">your</span> digital
+          presence to the next level?
         </h1>
         <p className="text-white-200 md:mt-10 my-5 text-center">
           Reach out to me today and let&apos;s discuss how I can help you
@@ -35,13 +36,14 @@ const Footer = () => {
               key={info.id}
               className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black rounded-lg border border-black-300"
             >
-              <a href={info.url} target="_blank">
+              <a href={info.url} target="_blank" rel="noopener noreferrer">
                 <Image
                   src={info.img}
                   alt="icons"
                   width={20}
                   height={20}
                   priority={true}
+                  style={{ width: "auto", height: "auto" }}
                 />
               </a>
             </div>
