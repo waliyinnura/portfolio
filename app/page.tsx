@@ -12,8 +12,8 @@ import { useRef } from "react";
 export default function Home() {
   const heroRef = useRef<HTMLElement | null>(null);
   return (
-    <main className="relative mx-auto flex flex-col items-center justify-center overflow-hidden md:overflow-visible bg-white dark:bg-black px-5 sm:px-10">
-      <div className="w-full max-w-7xl">
+    <main className="relative w-full flex flex-col items-center justify-center overflow-hidden md:overflow-visible bg-white dark:bg-black">
+      <div className="w-full">
         <ResizableNavbar />
         <Hero ref={heroRef} />
         <Grid />

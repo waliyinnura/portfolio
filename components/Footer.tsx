@@ -7,7 +7,7 @@ import Image from "next/image";
 const Footer = () => {
   const year = new Date().getFullYear();
   return (
-    <footer className="w-full pt-20 pb-5 bg-[url('/footer-grid.svg')] bg-cover bg-center">
+    <footer className="w-full pt-20 pb-5 px-5 bg-[url('/footer-grid.svg')] bg-cover bg-center">
       <div className="flex flex-col items-center">
         <h1 className="heading lg:max-w-[45vw]">
           Ready to take your digital presence to the next level?

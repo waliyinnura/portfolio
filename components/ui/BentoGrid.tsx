@@ -4,7 +4,6 @@ import { cn } from "@/lib/utils";
 import MagicButton from "./MagicButton";
 import { useState } from "react";
 import { IoCopyOutline } from "react-icons/io5";
-import { BackgroundGradientAnimation } from "./BackgroundGradientAnimation";
 import { GridGlobe } from "./GridGlobe";
 
 export const BentoGrid = ({
@@ -83,7 +82,6 @@ export const BentoGridItem = ({
             />
           )}
         </div>
-        {id === 6 && <BackgroundGradientAnimation />}
 
         <div
           className={cn(
