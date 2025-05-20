@@ -5,7 +5,7 @@ import { LinkPreview } from "./LinkPreview";
 import { AnimatedTooltip } from "./AnimatedTooltip";
 import { FlipWords } from "./FlipWords";
 import { words } from "@/data";
-import AnimatedImageGridModal from "./ImageGridModal";
+import AnimatedImageGridModal from "./modal/ImageGridModal";
 
 export interface TimelineEntry {
   id: number;
@@ -46,7 +46,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
     >
       <div className="mx-auto max-w-7xl py-20 text-center justify-center">
         <h1 className="text-2xl md:text-4xl font-semibold text-black dark:text-white">
-          This is my
+          This is <span className="text-blue-300">my</span>
           <br />
           <span className="mt-1 text-4xl font-bold leading-none md:text-[6rem]">
             <FlipWords words={words} />

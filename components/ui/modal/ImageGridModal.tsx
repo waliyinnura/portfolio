@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
 import React, { useState } from "react";
-import { TimelineEntry } from "./Timeline";
+import { TimelineEntry } from "../Timeline";
 
 const ImageGridWithModal = ({ item }: { item: TimelineEntry }) => {
   const { open, setOpen } = useModal();

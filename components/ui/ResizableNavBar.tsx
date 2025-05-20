@@ -10,6 +10,8 @@ import {
 import Image from "next/image";
 
 import React, { useRef, useState } from "react";
+import { useModal } from "./modal/AnimatedModal";
+import ReactDOM from "react-dom";
 
 interface NavbarProps {
   children: React.ReactNode;
@@ -236,11 +238,12 @@ export const NavbarLogo = () => {
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
     >
       <Image
-        src="https://assets.aceternity.com/logo-dark.png"
+        src="/logo-w.png"
         alt="logo"
         width={30}
         height={30}
         priority={true}
+        className="rounded-sm"
       />
       <span className="font-medium text-black dark:text-white">Well</span>
     </a>
@@ -273,13 +276,83 @@ export const NavbarButton: React.FC<NavbarButtonProps> = ({
     gradient:
       "bg-gradient-to-b from-blue-500 to-blue-700 text-white shadow-[0px_2px_0px_0px_rgba(255,255,255,0.3)_inset]",
   };
+  const { open, setOpen } = useModal();
+  const openModal = () => {
+    setOpen(true);
+  };
+
+  const closeModal = () => {
+    setOpen(false);
+  };
+
+  const buttons = [
+    { label: "Button 1", onClick: () => console.log("Button 1 clicked") },
+    { label: "Button 2", onClick: () => console.log("Button 2 clicked") },
+    { label: "Button 3", onClick: () => console.log("Button 3 clicked") },
+  ];
 
   return (
-    <button
-      className={cn(baseStyles, variantStyles[variant], className)}
-      {...props}
-    >
-      {children}
-    </button>
+    <div>
+      <button
+        className={cn(baseStyles, variantStyles[variant], className)}
+        onClick={() => openModal()}
+        {...props}
+      >
+        {children}
+      </button>
+
+      {/* Animated Modal */}
+      {typeof window !== "undefined" &&
+        ReactDOM.createPortal(
+          open && (
+            <AnimatePresence>
+              {open && (
+                <motion.div
+                  className="fixed inset-0 z-[99999] flex items-center justify-center bg-black bg-opacity-50 p-4"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  onClick={closeModal}
+                >
+                  <motion.div
+                    className="relative bg-white dark:bg-neutral-800 p-6 shadow-lg rounded-xl w-[90%] max-w-md"
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    exit={{ scale: 0.8, opacity: 0 }}
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    {/* Modal Title */}
+                    <h2 className="text-xl font-semibold text-center mb-4">
+                      Select an Option
+                    </h2>
+
+                    {/* Buttons in Grid */}
+                    <div className="grid grid-cols-1 gap-4">
+                      {buttons.map((button, index) => (
+                        <button
+                          key={index}
+                          onClick={button.onClick}
+                          className="w-full px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
+                        >
+                          {button.label}
+                        </button>
+                      ))}
+                    </div>
+
+                    {/* Close Button */}
+                    <button
+                      onClick={closeModal}
+                      className="mt-6 w-full px-4 py-2 bg-gray-300 text-gray-700 rounded hover:bg-gray-400 transition"
+                    >
+                      Close
+                    </button>
+                  </motion.div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          ),
+          document.body
+        )}
+    </div>
   );
 };

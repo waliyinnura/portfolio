@@ -13,6 +13,7 @@ import {
 import { navItems } from "@/data";
 import { useState } from "react";
 import { ThemeSwitcher } from "./ui/ThemeSwitcher";
+import { ModalProvider } from "./ui/modal/AnimatedModal";
 
 export function ResizableNavbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -26,7 +27,9 @@ export function ResizableNavbar() {
           <NavItems items={navItems} />
           <div className="flex gap-4">
             <ThemeSwitcher />
-            <NavbarButton variant="secondary">Book a call</NavbarButton>
+            <ModalProvider>
+              <NavbarButton variant="secondary">Book a call</NavbarButton>
+            </ModalProvider>
           </div>
         </NavBody>
 
@@ -55,18 +58,15 @@ export function ResizableNavbar() {
               </a>
             ))}
             <div className="flex w-full flex-col gap-4">
-              <NavbarButton
-                onClick={() => setIsMobileMenuOpen(false)}
-                variant="primary"
-                className="w-full"
-              >
-                Book a call
-              </NavbarButton>
+              <ModalProvider>
+                <NavbarButton variant="secondary" className="w-full">
+                  Book a call
+                </NavbarButton>
+              </ModalProvider>
             </div>
           </MobileNavMenu>
         </MobileNav>
       </Navbar>
-      {/* <DummyContent /> */}
 
       {/* Navbar */}
     </div>

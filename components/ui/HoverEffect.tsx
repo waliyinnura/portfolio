@@ -25,7 +25,7 @@ export const HoverEffect = ({
     <div className="w-full">
       <div className="mx-auto max-w-7xl py-20 text-center">
         <h1 className="text-2xl md:text-4xl font-semibold text-black dark:text-white z-50">
-          Look at <br />
+          Take a <span className="text-blue-300">look</span> at <br />
           <span className="mt-1 text-4xl font-bold leading-none md:text-[6rem]">
             My Recent
             <PointerHighlight
@@ -56,7 +56,7 @@ export const HoverEffect = ({
             <AnimatePresence>
               {hoveredIndex === idx && (
                 <motion.span
-                  className="absolute inset-0 h-full w-full bg-neutral-400 dark:bg-slate-400/[0.8] block  rounded-3xl"
+                  className="absolute inset-0 h-full w-full bg-neutral-400 dark:bg-slate-400/[0.8] hidden md:block rounded-3xl"
                   layoutId="hoverBackground"
                   initial={{ opacity: 0 }}
                   animate={{
