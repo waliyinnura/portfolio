@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import Grid from "@/components/Grid";
 import Hero from "@/components/Hero";
 import { ResizableNavbar } from "@/components/Navbar";
+// import { Phase } from "@/components/Phase";
 import { Projects } from "@/components/Projects";
 import WorkExperiences from "@/components/WorkExperiences";
 import { useRef } from "react";
@@ -20,6 +21,7 @@ export default function Home() {
         {/* <Cards /> */}
         <Projects />
         <WorkExperiences />
+        {/* <Phase /> */}
         <Footer />
       </div>
     </main>

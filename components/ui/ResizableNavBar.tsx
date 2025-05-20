@@ -12,6 +12,7 @@ import Image from "next/image";
 import React, { useRef, useState } from "react";
 import { useModal } from "./modal/AnimatedModal";
 import ReactDOM from "react-dom";
+import { buttons } from "@/data";
 
 interface NavbarProps {
   children: React.ReactNode;
@@ -285,12 +286,6 @@ export const NavbarButton: React.FC<NavbarButtonProps> = ({
     setOpen(false);
   };
 
-  const buttons = [
-    { label: "Button 1", onClick: () => console.log("Button 1 clicked") },
-    { label: "Button 2", onClick: () => console.log("Button 2 clicked") },
-    { label: "Button 3", onClick: () => console.log("Button 3 clicked") },
-  ];
-
   return (
     <div>
       <button
@@ -329,13 +324,15 @@ export const NavbarButton: React.FC<NavbarButtonProps> = ({
                     {/* Buttons in Grid */}
                     <div className="grid grid-cols-1 gap-4">
                       {buttons.map((button, index) => (
-                        <button
+                        <a
                           key={index}
-                          onClick={button.onClick}
-                          className="w-full px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
+                          href={button.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition text-center"
                         >
                           {button.label}
-                        </button>
+                        </a>
                       ))}
                     </div>
 

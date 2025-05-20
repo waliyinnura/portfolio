@@ -314,3 +314,21 @@ export const words = [
   "Doświadczenia",
   "Erfarenheter",
 ];
+
+export const buttons = [
+  {
+    label: "Email",
+    href: `mailto:${process.env.NEXT_PUBLIC_EMAIL}?subject=${encodeURIComponent("Booking Project Collaboration")}`,
+    onClick: () => console.log("Redirectin to email..."),
+  },
+  {
+    label: "Whatsapp",
+    href: process.env.NEXT_PUBLIC_WHATSAPP,
+    onClick: () => console.log("Redirectin to whatsapp..."),
+  },
+  {
+    label: "Coming Soon!",
+    // href: "#",
+    onClick: () => alert("Coming soon!"),
+  },
+];

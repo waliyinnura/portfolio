@@ -101,12 +101,12 @@ export const BentoGridItem = ({
           {id === 2 && <GridGlobe />}
 
           {id === 3 && (
-            <div className="absolute -right-3 flex w-fit gap-1 lg:-right-2 lg:gap-5">
+            <div className="absolute -right-1 flex w-fit gap-1 lg:-right-1 lg:gap-5">
               <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
                 {leftLists.map((item, i) => (
                   <span
                     key={i}
-                    className="rounded-lg bg-neutral-200 dark:bg-stone-700 px-3 py-2 text-center text-xs opacity-50 lg:px-3 lg:py-4 lg:text-base lg:opacity-100"
+                    className="rounded-lg bg-neutral-200 dark:bg-stone-700 px-3 py-2 text-center text-xs lg:px-3 lg:py-4 lg:text-base"
                   >
                     {item}
                   </span>
@@ -118,7 +118,7 @@ export const BentoGridItem = ({
                 {rightLists.map((item, i) => (
                   <span
                     key={i}
-                    className="rounded-lg bg-neutral-200 dark:bg-stone-700 px-3 py-2 text-center text-xs opacity-50 lg:px-3 lg:py-4 lg:text-base lg:opacity-100"
+                    className="rounded-lg bg-neutral-200 dark:bg-stone-700 px-3 py-2 text-center text-xs lg:px-3 lg:py-4 lg:text-base"
                   >
                     {item}
                   </span>
