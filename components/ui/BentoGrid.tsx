@@ -98,9 +98,9 @@ export const BentoGridItem = ({
             {title}
           </div>
 
-          {id === 2 && <GridGlobe />}
+          {id === 1 && <GridGlobe />}
 
-          {id === 3 && (
+          {id === 5 && (
             <div className="absolute -right-1 flex w-fit gap-1 lg:-right-1 lg:gap-5">
               <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
                 {leftLists.map((item, i) => (

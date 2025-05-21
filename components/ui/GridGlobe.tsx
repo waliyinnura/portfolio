@@ -27,7 +27,7 @@ export function GridGlobe() {
     maxRings: 3,
     initialPosition: { lat: 22.3193, lng: 114.1694 },
     autoRotate: true,
-    autoRotateSpeed: 0.5,
+    autoRotateSpeed: 0.7,
   };
   const colors = ["#c6f0f7", "#c6c8f7", "#eac6f7"];
   const sampleArcs = [
@@ -394,7 +394,7 @@ export function GridGlobe() {
   ];
 
   return (
-    <div className="absolute -left-5 top-36 flex h-full w-full items-center justify-center md:top-40">
+    <div className="absolute right-5 top-36 flex h-full w-full max-w-full items-center justify-center md:top-30">
       <div className="relative mx-auto h-96 w-full max-w-7xl overflow-hidden px-4">
         <div className="pointer-events-none absolute inset-x-0 bottom-0 z-40 h-40 w-full select-none bg-gradient-to-b from-transparent to-white dark:to-black" />
         <div className="absolute z-10 h-72 w-full md:h-full">

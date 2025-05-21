@@ -23,14 +23,6 @@ const Hero = forwardRef<HTMLElement>((_, ref) => {
             <p className="my-4 font-normal text-sm md:text-base text-black-200 dark:text-neutral-300 max-w-lg text-center mx-auto">
               Hi! I&apos;m Well, a Software Developer based in Indonesia.
             </p>
-
-            <a href="#about">
-              <MagicButton
-                title="Show my work"
-                icon={<FaAngleDoubleDown />}
-                position="right"
-              />
-            </a>
           </div>
         </div>
       </div>

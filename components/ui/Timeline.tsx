@@ -44,10 +44,10 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       ref={containerRef}
     >
       <div className="mx-auto max-w-7xl py-20 text-center">
-        <h1 className="text-2xl md:text-4xl font-semibold text-black dark:text-white">
+        <h1 className="text-xl md:text-2xl font-semibold text-neutral-700 dark:text-neutral-400">
           This is <span className="text-blue-300">my</span>
           <br />
-          <span className="mt-1 text-4xl font-bold leading-none md:text-[6rem]">
+          <span className="mt-1 text-4xl font-bold leading-none md:text-7xl">
             <FlipWords words={words} />
           </span>
         </h1>

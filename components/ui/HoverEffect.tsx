@@ -2,7 +2,6 @@ import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
 import { useState } from "react";
-import { MovingBorder } from "./MovingBorder";
 import { PointerHighlight } from "./PointerHighlight";
 
 export const HoverEffect = ({
@@ -24,19 +23,19 @@ export const HoverEffect = ({
   return (
     <div className="w-full">
       <div className="mx-auto max-w-7xl py-20 text-center">
-        <h1 className="text-2xl md:text-4xl font-semibold text-black dark:text-white z-50">
+        <h2 className="text-xl md:text-2xl font-semibold text-neutral-700 dark:text-neutral-400 z-50">
           Take a <span className="text-blue-300">look</span> at <br />
-          <span className="mt-1 text-4xl font-bold leading-none md:text-[6rem]">
+          <span className="mt-1 text-4xl font-bold leading-none md:text-7xl">
             My Recent
             <PointerHighlight
-              rectangleClassName="bg-neutral-400 border-neutral-400 leading-loose opacity-50"
+              rectangleClassName="bg-neutral-400 border-neutral-400 leading-loose opacity-25"
               pointerClassName="text-stone-600 h-5 w-5"
               containerClassName="inline-block mx-1"
             >
               <span className="relative z-10">Projects</span>
             </PointerHighlight>
           </span>
-        </h1>
+        </h2>
       </div>
       <div
         className={cn(
@@ -70,18 +69,6 @@ export const HoverEffect = ({
                 />
               )}
             </AnimatePresence>
-            <div className="absolute inset-0 rounded-2xl h-full w-full overflow-hidden">
-              <MovingBorder rx="30%" ry="30%">
-                <div
-                  className={cn("h-20 w-20 opacity-[0.8] blur-2xl")}
-                  style={{
-                    background:
-                      "linear-gradient(90deg,rgba(181, 201, 255, 1) 0%, rgba(69, 107, 222, 1) 50%, rgba(0, 89, 255, 1) 100%)",
-                    borderRadius: "20px",
-                  }}
-                />
-              </MovingBorder>
-            </div>
             <Card>
               <CardImage img={item.img} />
               <CardTitle>{item.title}</CardTitle>
