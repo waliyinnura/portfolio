@@ -45,9 +45,9 @@ export const HoverEffect = ({
       >
         {items.map((item, idx) => (
           <a
-            href={item?.link}
+            href={item.link}
             target="_blank"
-            key={item?.link}
+            key={item.id}
             className="relative group block p-2"
             onMouseEnter={() => setHoveredIndex(idx)}
             onMouseLeave={() => setHoveredIndex(null)}
@@ -58,14 +58,9 @@ export const HoverEffect = ({
                   className="absolute inset-0 h-full w-full bg-neutral-400 dark:bg-slate-400/[0.8] hidden md:block rounded-3xl"
                   layoutId="hoverBackground"
                   initial={{ opacity: 0 }}
-                  animate={{
-                    opacity: 1,
-                    transition: { duration: 0.15 },
-                  }}
-                  exit={{
-                    opacity: 0,
-                    transition: { duration: 0.15, delay: 0.2 },
-                  }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.15 }}
                 />
               )}
             </AnimatePresence>
@@ -137,17 +132,15 @@ export const CardDescription = ({
     </p>
   );
 };
-export const CardImage = ({ img }: { img: string }) => {
-  return (
-    <div className="h-44 sm:h-60 md:h-44 w-full relative  transition duration-500 bg-transparent group-hover:bg-transparent">
-      <Image
-        src={img}
-        alt="cover"
-        fill
-        sizes="100%"
-        className="rounded-t-2xl absolute inset-0 object-cover object-center  mix-blend-multiply"
-        priority={true}
-      />
-    </div>
-  );
-};
+export const CardImage = ({ img }: { img: string }) => (
+  <div className="h-44 sm:h-60 md:h-44 w-full relative bg-transparent transition-transform duration-300 group-hover:scale-105">
+    <Image
+      src={img}
+      alt="cover"
+      fill
+      sizes="100%"
+      className="rounded-t-2xl absolute inset-0 object-cover object-center mix-blend-multiply"
+      priority
+    />
+  </div>
+);

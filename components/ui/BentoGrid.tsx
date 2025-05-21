@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 import { cn } from "@/lib/utils";
 import { GridGlobe } from "./GridGlobe";
@@ -29,19 +28,13 @@ export const BentoGridItem = ({
   title,
   description,
   className,
-  imgClassName,
   titleClassName,
-  img,
-  spareImg,
 }: {
   id?: number;
   title?: string;
   description?: string;
   className?: string;
-  imgClassName?: string;
   titleClassName?: string;
-  img?: string;
-  spareImg?: string;
 }) => {
   return (
     <div
@@ -51,27 +44,6 @@ export const BentoGridItem = ({
       )}
     >
       <div className={` h-full`}>
-        <div className="absolute h-full w-full">
-          {img && (
-            <img
-              src={img}
-              alt={img}
-              className={cn(imgClassName, "object-cover object-center")}
-            />
-          )}
-        </div>
-        <div
-          className={`absolute -bottom-5 right-0 ${id === 5 && "w-full opacity-80"} `}
-        >
-          {spareImg && (
-            <img
-              src={spareImg}
-              alt={spareImg}
-              className="h-full w-full object-cover object-center"
-            />
-          )}
-        </div>
-
         <div
           className={cn(
             titleClassName,

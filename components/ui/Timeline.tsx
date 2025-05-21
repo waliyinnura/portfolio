@@ -24,10 +24,9 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   useEffect(() => {
     if (ref.current) {
-      const rect = ref.current.getBoundingClientRect();
-      setHeight(rect.height);
+      setHeight(ref.current.getBoundingClientRect().height);
     }
-  }, [ref]);
+  }, [data]);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -39,8 +38,8 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   return (
     <div
-      className="relative w-full bg-white font-sans dark:bg-black"
       ref={containerRef}
+      className="relative w-full bg-white font-sans dark:bg-black"
     >
       <div className="mx-auto max-w-7xl py-20 text-center">
         <h1 className="text-xl md:text-2xl font-semibold text-neutral-700 dark:text-neutral-400">
@@ -74,9 +73,8 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               <div className="relative">
                 <LinkPreview
                   url={
-                    item.urlPreview
-                      ? item.urlPreview
-                      : "https://github.com/waliyinnura?tab=repositories"
+                    item.urlPreview ||
+                    "https://github.com/waliyinnura?tab=repositories"
                   }
                   className="font-bold text-neutral-700 dark:text-neutral-400 mb-8 text-xl md:text-3xl"
                 >
@@ -102,16 +100,11 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           </div>
         ))}
         <div
-          style={{
-            height: height + "px",
-          }}
+          style={{ height: `${height}px` }}
           className="absolute left-8 top-0 w-[2px] overflow-hidden bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-neutral-200 to-transparent to-[99%] [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)] dark:via-neutral-700 md:left-8"
         >
           <motion.div
-            style={{
-              height: heightTransform,
-              opacity: opacityTransform,
-            }}
+            style={{ height: heightTransform, opacity: opacityTransform }}
             className="absolute inset-x-0 top-0 w-[2px] rounded-full bg-gradient-to-t from-stone-50 dark:from-stone-600 from-[0%] via-blue-500 dark:via-blue-500 via-[10%] to-transparent"
           />
         </div>

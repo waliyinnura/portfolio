@@ -34,7 +34,7 @@ export function ResizableNavbar() {
         </NavBody>
 
         {/* Mobile Navigation */}
-        <MobileNav>
+        <MobileNav visible={isMobileMenuOpen}>
           <MobileNavHeader>
             <NavbarLogo />
             <MobileNavToggle
@@ -67,8 +67,6 @@ export function ResizableNavbar() {
           </MobileNavMenu>
         </MobileNav>
       </Navbar>
-
-      {/* Navbar */}
     </div>
   );
 }

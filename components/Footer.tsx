@@ -7,13 +7,13 @@ import Image from "next/image";
 const Footer = () => {
   const year = new Date().getFullYear();
   return (
-    <footer className="relative w-full pt-20 pb-5 px-5 bg-[url('/footer-grid.svg')] bg-cover bg-center">
+    <footer className="bg-[url('/footer-grid.svg')] bg-cover bg-center pt-20 pb-5 px-5">
       <div className="flex flex-col items-center">
-        <h1 className="heading lg:max-w-[45vw] text-neutral-700 dark:text-neutral-400">
+        <h1 className="text-4xl md:text-5xl font-bold text-center text-neutral-700 dark:text-neutral-400">
           Ready to take <span className="text-blue-300">your</span> digital
           presence to the next level?
         </h1>
-        <p className="text-neutral-700 dark:text-neutral-400 md:mt-10 my-5 text-center">
+        <p className="mt-5 text-center text-neutral-700 dark:text-neutral-400">
           Reach out to me today and let&apos;s discuss how I can help you
           achieve your goals.
         </p>
@@ -25,28 +25,28 @@ const Footer = () => {
           />
         </a>
       </div>
-      <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
-        <p className="md:text-base text-sm md:font-normal font-light pb-1">
-          Copyright © {year} Well
+      <div className="flex mt-16 justify-between items-center">
+        <p className="text-sm md:text-base md:font-normal font-light">
+          Copyright &copy; {year} Well
         </p>
-
-        <div className="flex items-center md:gap-3 gap-6">
+        <div className="flex items-center gap-3">
           {socialMedia.map((info) => (
-            <div
+            <a
               key={info.id}
-              className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black rounded-lg border border-black-300"
+              href={info.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 bg-black-300 rounded-lg flex justify-center items-center"
             >
-              <a href={info.url} target="_blank" rel="noopener noreferrer">
-                <Image
-                  src={info.img}
-                  alt="icons"
-                  width={20}
-                  height={20}
-                  priority={true}
-                  style={{ width: "auto", height: "auto" }}
-                />
-              </a>
-            </div>
+              <Image
+                src={info.img}
+                alt="icons"
+                width={20}
+                height={20}
+                priority={true}
+                style={{ width: "auto", height: "auto" }}
+              />
+            </a>
           ))}
         </div>
       </div>
