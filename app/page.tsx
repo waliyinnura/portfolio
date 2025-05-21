@@ -19,8 +19,8 @@ export default function Home() {
         <Hero ref={heroRef} />
         <Grid />
         {/* <Cards /> */}
-        <Projects />
         <WorkExperiences />
+        <Projects />
         {/* <Phase /> */}
         <Footer />
       </div>

@@ -43,7 +43,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       className="relative w-full bg-white font-sans dark:bg-black"
       ref={containerRef}
     >
-      <div className="mx-auto max-w-7xl py-20 text-center justify-center">
+      <div className="mx-auto max-w-7xl py-20 text-center">
         <h1 className="text-2xl md:text-4xl font-semibold text-black dark:text-white">
           This is <span className="text-blue-300">my</span>
           <br />
