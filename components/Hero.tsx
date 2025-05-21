@@ -4,14 +4,14 @@ const Hero = forwardRef<HTMLElement>((_, ref) => {
   return (
     <section id="hero" ref={ref}>
       <div className="relative w-full pb-20 pt-36 overflow-hidden">
-        <div className="absolute left-0 top-0 flex h-screen w-full items-center justify-center bg-white dark:bg-black bg-dot-neutral-700 opacity-25 dark:opacity-50">
+        <div className="absolute left-0 top-0 flex h-screen w-full items-center justify-center bg-white dark:bg-black bg-dot-neutral-700 opacity-20 dark:opacity-60">
           {/* Radial gradient for the container to give a faded look */}
           <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white dark:bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_10%,black)]"></div>
         </div>
 
         <div className="relative z-10 my-20 flex justify-center">
           <div className="flex max-w-[89vw] flex-col items-center justify-center md:max-w-2xl lg:max-w-[60vw]">
-            <h2 className="max-w-80 text-center text-xs uppercase tracking-widest text-black-200 dark:text-blue-100 pb-2">
+            <h2 className="max-w-80 text-center text-xs uppercase tracking-widest text-neutral-700 dark:text-neutral-400 pb-2">
               Well Portfolio
             </h2>
 

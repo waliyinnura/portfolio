@@ -9,11 +9,11 @@ const Footer = () => {
   return (
     <footer className="relative w-full pt-20 pb-5 px-5 bg-[url('/footer-grid.svg')] bg-cover bg-center">
       <div className="flex flex-col items-center">
-        <h1 className="heading lg:max-w-[45vw]">
+        <h1 className="heading lg:max-w-[45vw] text-neutral-700 dark:text-neutral-400">
           Ready to take <span className="text-blue-300">your</span> digital
           presence to the next level?
         </h1>
-        <p className="text-white-200 md:mt-10 my-5 text-center">
+        <p className="text-neutral-700 dark:text-neutral-400 md:mt-10 my-5 text-center">
           Reach out to me today and let&apos;s discuss how I can help you
           achieve your goals.
         </p>

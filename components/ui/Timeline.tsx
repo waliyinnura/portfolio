@@ -14,7 +14,6 @@ export interface TimelineEntry {
   company: string;
   jobDesc: string;
   urlPreview: string;
-  img: string[];
   iconLists: { id: number; name: string; image: string }[];
 }
 
@@ -63,13 +62,13 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               <div className="absolute left-3 flex h-10 w-10 items-center justify-center rounded-full bg-white dark:bg-black md:left-3">
                 <div className="h-4 w-4 rounded-full border border-neutral-300 bg-neutral-200 p-2 dark:border-neutral-700 dark:bg-neutral-800" />
               </div>
-              <h3 className="hidden text-xl font-bold text-neutral-500 dark:text-neutral-500 md:block md:pl-20 md:text-5xl">
+              <h3 className="hidden text-xl font-bold text-neutral-700 dark:text-neutral-400 md:block md:pl-20 md:text-5xl">
                 {item.title}
               </h3>
             </div>
 
             <div className="relative w-full pl-20 pr-4 md:pl-4">
-              <h3 className="mb-4 block text-left text-2xl font-bold text-neutral-500 dark:text-neutral-500 md:hidden">
+              <h3 className="mb-4 block text-left text-2xl font-bold text-neutral-700 dark:text-neutral-400 md:hidden">
                 {item.title}
               </h3>
               <div className="relative">
@@ -79,20 +78,20 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                       ? item.urlPreview
                       : "https://github.com/waliyinnura?tab=repositories"
                   }
-                  className="font-bold text-black dark:text-white mb-8 text-xl md:text-3xl"
+                  className="font-bold text-neutral-700 dark:text-neutral-400 mb-8 text-xl md:text-3xl"
                 >
                   {item.company}
                 </LinkPreview>
-                <p className="mb-8 pt-2 text-xs font-normal text-neutral-800 dark:text-neutral-200 md:text-sm">
+                <p className="mb-8 pt-2 text-xs font-normal text-neutral-700 dark:text-neutral-400 md:text-sm">
                   {item.desc}
                 </p>
-                <p className="mt-8 mb-2 text-xs font-bold text-neutral-800 dark:text-neutral-200 md:text-sm">
+                <p className="mt-8 mb-2 text-xs font-bold text-neutral-700 dark:text-neutral-400 md:text-sm">
                   What I do here
                 </p>
-                <p className="mb-8 text-xs font-normal text-neutral-800 dark:text-neutral-200 md:text-sm">
+                <p className="mb-8 text-xs font-normal text-neutral-700 dark:text-neutral-400 md:text-sm">
                   {item.jobDesc}
                 </p>
-                <p className="mt-8 text-xs font-bold text-neutral-800 dark:text-neutral-200 md:text-sm">
+                <p className="mt-8 text-xs font-bold text-neutral-700 dark:text-neutral-400 md:text-sm">
                   What I learn here
                 </p>
                 <div className="relative flex items-center py-5">

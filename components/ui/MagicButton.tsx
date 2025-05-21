@@ -19,7 +19,7 @@ const MagicButton = ({
       onClick={handleClick}
     >
       <span
-        className={`inline-flex h-full w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-black-200 dark:bg-white-300 bg-opacity-75 px-7 text-sm font-medium text-white dark:text-black backdrop-blur-3xl ${otherClasses}`}
+        className={`inline-flex h-full w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-black-200 dark:bg-white-300 bg-opacity-75 px-7 text-sm font-medium dark:text-neutral-700 text-neutral-200 backdrop-blur-3xl ${otherClasses}`}
       >
         {position === "left" && icon}
         {title}

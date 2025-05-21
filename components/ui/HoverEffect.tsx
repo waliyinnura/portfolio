@@ -48,7 +48,7 @@ export const HoverEffect = ({
             href={item?.link}
             target="_blank"
             key={item?.link}
-            className="relative group block p-2 h-full w-full"
+            className="relative group block p-2"
             onMouseEnter={() => setHoveredIndex(idx)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
@@ -71,8 +71,10 @@ export const HoverEffect = ({
             </AnimatePresence>
             <Card>
               <CardImage img={item.img} />
-              <CardTitle>{item.title}</CardTitle>
-              <CardDescription>{item.des}</CardDescription>
+              <div className="p-2">
+                <CardTitle>{item.title}</CardTitle>
+                <CardDescription>{item.des}</CardDescription>
+              </div>
             </Card>
           </a>
         ))}
@@ -91,13 +93,11 @@ export const Card = ({
   return (
     <div
       className={cn(
-        "rounded-2xl h-full w-full p-4 overflow-hidden bg-neutral-200 dark:bg-black-200 border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20",
+        "rounded-2xl h-full w-full p-4 overflow-hidden bg-neutral-200 dark:bg-black-200 border border-transparent group-hover:border-slate-700 relative z-20",
         className
       )}
     >
-      <div className="relative z-50">
-        <div className="p-4">{children}</div>
-      </div>
+      <div className="relative z-50">{children}</div>
     </div>
   );
 };
@@ -111,7 +111,7 @@ export const CardTitle = ({
   return (
     <h4
       className={cn(
-        "text-black-200 dark:text-zinc-100 font-bold tracking-wide my-2",
+        "text-black-200 dark:text-zinc-100 font-bold text-left tracking-wide my-4",
         className
       )}
     >
@@ -139,19 +139,14 @@ export const CardDescription = ({
 };
 export const CardImage = ({ img }: { img: string }) => {
   return (
-    <div className="w-full flex justify-center my-1">
-      <div
-        className="relative w-full max-w-md aspect-[3/2] overflow-hidden rounded-2xl"
-        style={{ backgroundColor: "#13162D" }}
-      >
-        <Image
-          src={img}
-          alt="cover"
-          fill
-          className="object-cover"
-          priority={true}
-        />
-      </div>
+    <div className="h-44 sm:h-60 md:h-44 w-full relative  transition duration-500 bg-transparent group-hover:bg-transparent">
+      <Image
+        src={img}
+        alt="cover"
+        fill
+        className="rounded-t-2xl absolute inset-0 object-cover object-center  mix-blend-multiply"
+        priority={true}
+      />
     </div>
   );
 };
