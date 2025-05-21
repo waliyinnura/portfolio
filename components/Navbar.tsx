@@ -19,7 +19,7 @@ export function ResizableNavbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className="relative w-full z-[999]">
+    <div className="relative w-full max-w-7xl z-[999]">
       <Navbar>
         {/* Desktop Navigation */}
         <NavBody>
