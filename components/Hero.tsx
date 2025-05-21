@@ -1,6 +1,4 @@
 import React, { forwardRef } from "react";
-import MagicButton from "./ui/MagicButton";
-import { FaAngleDoubleDown } from "react-icons/fa";
 
 const Hero = forwardRef<HTMLElement>((_, ref) => {
   return (
@@ -17,7 +15,7 @@ const Hero = forwardRef<HTMLElement>((_, ref) => {
               Well Portfolio
             </h2>
 
-            <h1 className="text-4xl lg:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-400 to-neutral-700 dark:from-neutral-50 dark:to-neutral-400 bg-opacity-80 dark:bg-opacity-50">
+            <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-400 to-neutral-700 dark:from-neutral-50 dark:to-neutral-400 bg-opacity-80 dark:bg-opacity-50">
               Transforming Your Idea Into Reality
             </h1>
             <p className="my-4 font-normal text-sm md:text-base text-black-200 dark:text-neutral-300 max-w-lg text-center mx-auto">
