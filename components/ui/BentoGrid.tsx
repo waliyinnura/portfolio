@@ -2,6 +2,8 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { GridGlobe } from "./GridGlobe";
+import { iconLeftLists, iconRightLists } from "@/data";
+import Image from "next/image";
 
 export const BentoGrid = ({
   className,
@@ -41,9 +43,6 @@ export const BentoGridItem = ({
   img?: string;
   spareImg?: string;
 }) => {
-  const leftLists = ["ReactJS", "Express", "Typescript"];
-  const rightLists = ["NextJS", "NestJS", "MySQL"];
-
   return (
     <div
       className={cn(
@@ -91,26 +90,38 @@ export const BentoGridItem = ({
           {id === 1 && <GridGlobe />}
 
           {id === 5 && (
-            <div className="absolute -right-1 flex w-fit gap-1 lg:-right-1 md:gap-3 lg:gap-5">
+            <div className="absolute flex w-fit gap-1 right-8 md:gap-3 lg:gap-5">
               <div className="flex flex-col gap-3 md:gap-6 lg:gap-8">
-                {leftLists.map((item, i) => (
-                  <span
+                {iconLeftLists.map((item, i) => (
+                  <div
                     key={i}
-                    className="rounded-lg mdrounded-2xl bg-neutral-200 dark:bg-stone-700 px-3 py-2 text-center text-xs md:px-4 md:py-4 md:text-lg lg:px-6 lg:py-6 lg:text-xl"
+                    className="rounded-full bg-neutral-200 dark:bg-stone-700 px-3 py-2 md:px-4 md:py-4"
                   >
-                    {item}
-                  </span>
+                    <Image
+                      height={100}
+                      width={100}
+                      src={item.image}
+                      alt={item.name}
+                      priority={true}
+                      className="relative !m-0 object-cover object-top !p-0 transition duration-500 group-hover:z-[999] group-hover:scale-105 rounded-full bg-transparent lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
+                    />
+                  </div>
                 ))}
-                <span></span>
               </div>
               <div className="flex flex-col gap-3 md:gap-6 lg:gap-8">
-                <span></span>
-                {rightLists.map((item, i) => (
+                {iconRightLists.map((item, i) => (
                   <span
                     key={i}
-                    className="rounded-lg mdrounded-2xl bg-neutral-200 dark:bg-stone-700 px-3 py-2 text-center text-xs md:px-4 md:py-4 md:text-lg lg:px-6 lg:py-6 lg:text-xl"
+                    className="rounded-full bg-neutral-200 dark:bg-stone-700 px-3 py-2 text-center text-xs md:px-4 md:py-4"
                   >
-                    {item}
+                    <Image
+                      height={100}
+                      width={100}
+                      src={item.image}
+                      alt={item.name}
+                      priority={true}
+                      className="relative !m-0 object-cover object-top !p-0 transition duration-500 group-hover:z-[999] group-hover:scale-105 rounded-full bg-transparent lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
+                    />
                   </span>
                 ))}
               </div>

@@ -305,3 +305,39 @@ export const buttons = [
     onClick: () => alert("Coming soon!"),
   },
 ];
+
+export const iconRightLists = [
+  {
+    id: 1,
+    name: "React.js",
+    image: "/react.svg",
+  },
+  {
+    id: 2,
+    name: "Next.js",
+    image: "/next.svg",
+  },
+  {
+    id: 3,
+    name: "Tailwind CSS",
+    image: "/tail.svg",
+  },
+];
+
+export const iconLeftLists = [
+  {
+    id: 1,
+    name: "Typescript",
+    image: "/ts.svg",
+  },
+  {
+    id: 2,
+    name: "Node.js",
+    image: "/node.svg",
+  },
+  {
+    id: 3,
+    name: "Nest.js",
+    image: "/nestjs.svg",
+  },
+];

@@ -144,6 +144,7 @@ export const CardImage = ({ img }: { img: string }) => {
         src={img}
         alt="cover"
         fill
+        sizes="100%"
         className="rounded-t-2xl absolute inset-0 object-cover object-center  mix-blend-multiply"
         priority={true}
       />
