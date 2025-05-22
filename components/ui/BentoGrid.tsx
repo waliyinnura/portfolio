@@ -69,6 +69,9 @@ export const BentoGridItem = memo(
                 className={
                   "absolute h-fit w-fit overflow-hidden -bottom-20 -right-20 md:-bottom-40 lg:-bottom-20 lg:-right-20"
                 }
+                loading="lazy"
+                decoding="async"
+                priority={false}
               />
             )}
 
