@@ -12,4 +12,6 @@ const WorkExperiences = React.memo(() => {
   );
 });
 
+WorkExperiences.displayName = "WorkExperiences";
+
 export default WorkExperiences;
