@@ -1,9 +1,8 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { GridGlobe } from "./GridGlobe";
 import { iconLeftLists, iconRightLists } from "@/data";
 import Image from "next/image";
-import { memo, useEffect, useRef, useState } from "react";
+import { memo } from "react";
 
 export const BentoGrid = ({
   className,
@@ -38,20 +37,6 @@ export const BentoGridItem = memo(
     className?: string;
     titleClassName?: string;
   }) => {
-    const ref = useRef<HTMLDivElement>(null);
-    const [isVisible, setIsVisible] = useState(false);
-
-    useEffect(() => {
-      const node = ref.current;
-      const observer = new window.IntersectionObserver(
-        ([entry]) => setIsVisible(entry.isIntersecting),
-        { threshold: 0.2 }
-      );
-      if (node) observer.observe(node);
-      return () => {
-        if (node) observer.unobserve(node);
-      };
-    }, []);
     return (
       <div
         className={cn(
@@ -75,7 +60,17 @@ export const BentoGridItem = memo(
               {title}
             </div>
 
-            {id === 1 && isVisible && <GridGlobe />}
+            {id === 1 && (
+              <Image
+                src={"/map.svg"}
+                alt="map"
+                width={100}
+                height={100}
+                className={
+                  "absolute h-fit w-fit overflow-hidden -bottom-20 -right-20 md:-bottom-40 lg:-bottom-20 lg:-right-20"
+                }
+              />
+            )}
 
             {id === 5 && (
               <div className="absolute flex w-fit gap-1 right-8 md:gap-3 lg:gap-5">
