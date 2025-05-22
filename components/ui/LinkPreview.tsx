@@ -1,6 +1,6 @@
 "use client";
-import * as HoverCardPrimitive from "@radix-ui/react-hover-card";
 
+import { Root, Trigger, Content } from "@radix-ui/react-hover-card";
 import { encode } from "qss";
 import React from "react";
 import {
@@ -81,23 +81,23 @@ export const LinkPreview = ({
         </div>
       ) : null}
 
-      <HoverCardPrimitive.Root
+      <Root
         openDelay={50}
         closeDelay={100}
         onOpenChange={(open) => {
           setOpen(open);
         }}
       >
-        <HoverCardPrimitive.Trigger
+        <Trigger
           onMouseMove={handleMouseMove}
           className={cn(className)}
           href={url}
           target="_blank"
         >
           {children}
-        </HoverCardPrimitive.Trigger>
+        </Trigger>
 
-        <HoverCardPrimitive.Content
+        <Content
           className="[transform-origin:var(--radix-hover-card-content-transform-origin)]"
           side="top"
           align="center"
@@ -139,8 +139,8 @@ export const LinkPreview = ({
               </motion.div>
             )}
           </AnimatePresence>
-        </HoverCardPrimitive.Content>
-      </HoverCardPrimitive.Root>
+        </Content>
+      </Root>
     </>
   );
 };

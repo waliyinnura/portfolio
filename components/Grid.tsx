@@ -23,4 +23,6 @@ const Grid = React.memo(() => {
   );
 });
 
+Grid.displayName = "Grid";
+
 export default Grid;

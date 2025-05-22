@@ -26,5 +26,6 @@ const Hero = React.memo(() => {
     </section>
   );
 });
+Hero.displayName = "Hero";
 
 export default Hero;

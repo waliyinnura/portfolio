@@ -19,4 +19,6 @@ const Projects = React.memo(() => {
   );
 });
 
+Projects.displayName = "Projects";
+
 export default Projects;
