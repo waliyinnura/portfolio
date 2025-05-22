@@ -82,7 +82,7 @@ export const LinkPreview = ({
             width={width}
             height={height}
             alt=""
-            aria-hidden="true"
+            // aria-hidden="false"
           />
         </div>
       ) : null}

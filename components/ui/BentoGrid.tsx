@@ -1,6 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { GridGlobe } from "./GridGlobe";
+// import { GridGlobe } from "./GridGlobe";
 import { iconLeftLists, iconRightLists } from "@/data";
 import Image from "next/image";
 import { memo } from "react";
@@ -61,7 +61,7 @@ export const BentoGridItem = memo(
               {title}
             </div>
 
-            {id === 1 && <GridGlobe />}
+            {/* {id === 1 && <GridGlobe />} */}
 
             {id === 5 && (
               <div className="absolute flex w-fit gap-1 right-8 md:gap-3 lg:gap-5">
