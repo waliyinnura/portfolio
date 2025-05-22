@@ -109,14 +109,14 @@ export const CardTitle = ({
   children: React.ReactNode;
 }) => {
   return (
-    <h4
+    <h3
       className={cn(
         "text-black-200 dark:text-zinc-100 font-bold text-left tracking-wide my-4",
         className
       )}
     >
       {children}
-    </h4>
+    </h3>
   );
 };
 export const CardDescription = ({
@@ -145,7 +145,6 @@ export const CardImage = ({ img }: { img: string }) => (
       fill
       sizes="100%"
       className="rounded-t-2xl absolute inset-0 object-cover object-center mix-blend-multiply"
-      priority
     />
   </div>
 );

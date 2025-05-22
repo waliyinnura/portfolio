@@ -1,11 +1,12 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import Footer from "@/components/Footer";
-import Grid from "@/components/Grid";
-import Hero from "@/components/Hero";
 import { ResizableNavbar } from "@/components/Navbar";
-import { Projects } from "@/components/Projects";
-import WorkExperiences from "@/components/WorkExperiences";
+const Hero = dynamic(() => import("@/components/Hero"));
+const Grid = dynamic(() => import("@/components/Grid"));
+const WorkExperiences = dynamic(() => import("@/components/WorkExperiences"));
+const Projects = dynamic(() => import("@/components/Projects"));
 
 export default function Home() {
   return (

@@ -2,7 +2,7 @@ import React from "react";
 import { BentoGrid, BentoGridItem } from "./ui/BentoGrid";
 import { gridItems } from "@/data";
 
-const Grid = () => {
+const Grid = React.memo(() => {
   return (
     <section id="about">
       <BentoGrid className="relative w-full py-20 px-5">
@@ -21,6 +21,6 @@ const Grid = () => {
       </BentoGrid>
     </section>
   );
-};
+});
 
 export default Grid;

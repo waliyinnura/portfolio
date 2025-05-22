@@ -74,7 +74,6 @@ export const BentoGridItem = ({
                       width={100}
                       src={item.image}
                       alt={item.name}
-                      priority={true}
                       className="relative !m-0 object-cover object-top !p-0 transition duration-500 group-hover:z-[999] group-hover:scale-105 rounded-full bg-transparent lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
                     />
                   </div>
@@ -91,7 +90,6 @@ export const BentoGridItem = ({
                       width={100}
                       src={item.image}
                       alt={item.name}
-                      priority={true}
                       className="relative !m-0 object-cover object-top !p-0 transition duration-500 group-hover:z-[999] group-hover:scale-105 rounded-full bg-transparent lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
                     />
                   </span>

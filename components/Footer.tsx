@@ -10,11 +10,11 @@ const Footer = () => {
   return (
     <footer className="bg-[url('/footer-grid.svg')] bg-cover bg-center pt-20 pb-5 px-5">
       <div className="flex flex-col items-center">
-        <h1 className="text-4xl md:text-5xl font-bold text-center text-neutral-700 dark:text-neutral-400">
+        <h1 className="text-2xl md:text-5xl font-bold text-center text-neutral-700 dark:text-neutral-400">
           Improve your <span className="text-blue-300">digital</span> presence
           with me
         </h1>
-        <p className="mt-5 text-center text-neutral-700 dark:text-neutral-400">
+        <p className="mt-5 text-xs md:text-base text-center text-neutral-700 dark:text-neutral-400">
           Let&apos;s discuss how I can help you achieve your goals.
         </p>
         <a href="mailto:waliyinnura@gmail.com" className="mt-5">
@@ -43,7 +43,7 @@ const Footer = () => {
                 alt="icons"
                 width={20}
                 height={20}
-                priority={true}
+                loading="lazy"
                 style={{ width: "auto", height: "auto" }}
               />
             </a>

@@ -77,13 +77,7 @@ export const LinkPreview = ({
     <>
       {isMounted ? (
         <div className="hidden">
-          <Image
-            priority={true}
-            src={src}
-            width={width}
-            height={height}
-            alt="hidden image"
-          />
+          <Image src={src} width={width} height={height} alt="hidden image" />
         </div>
       ) : null}
 
@@ -135,7 +129,6 @@ export const LinkPreview = ({
                   style={{ fontSize: 0 }}
                 >
                   <Image
-                    priority={true}
                     src={isStatic ? imageSrc : src}
                     width={width}
                     height={height}

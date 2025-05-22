@@ -1,10 +1,9 @@
-"use client";
 import React from "react";
 import { HoverEffect } from "./ui/HoverEffect";
 import { projects } from "@/data";
 import { LinkPreview } from "./ui/LinkPreview";
 
-export function Projects() {
+const Projects = React.memo(() => {
   return (
     <section id="projects" className="w-full mx-auto px-4">
       <HoverEffect items={projects} />
@@ -18,4 +17,6 @@ export function Projects() {
       </div>
     </section>
   );
-}
+});
+
+export default Projects;
