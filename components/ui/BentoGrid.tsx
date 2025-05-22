@@ -41,7 +41,7 @@ export const BentoGridItem = memo(
     return (
       <div
         className={cn(
-          "group/bento bg-neutral-300 dark:bg-black-200 relative row-span-1 flex flex-col justify-center space-y-4 overflow-hidden rounded-3xl border border-transparent shadow-input transition duration-200 hover:shadow-xl dark:shadow-none",
+          "group/bento bg-neutral-300 dark:bg-black-200 relative row-span-1 flex flex-col justify-center space-y-4 overflow-hidden rounded-3xl border border-transparent shadow-input transition duration-200 hover:md:shadow-xl dark:shadow-none",
           className
         )}
       >

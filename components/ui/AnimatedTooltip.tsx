@@ -41,8 +41,12 @@ export const AnimatedTooltip = ({
         <div
           className="group relative -mr-3"
           key={item.name}
+          tabIndex={0} // aksesibilitas: bisa difokuskan
           onMouseEnter={() => setHoveredIndex(item.id)}
           onMouseLeave={() => setHoveredIndex(null)}
+          aria-describedby={
+            hoveredIndex === item.id ? `tooltip-${item.id}` : undefined
+          }
         >
           <AnimatePresence mode="popLayout">
             {hoveredIndex === item.id && (
@@ -64,7 +68,10 @@ export const AnimatedTooltip = ({
                   rotate: rotate,
                   whiteSpace: "nowrap",
                 }}
-                className="absolute -top-14 z-[9999] flex flex-col items-center justify-center rounded-md bg-black dark:bg-white opacity-50 px-4 py-2 text-xs shadow-xl"
+                className="absolute -top-14 z-[9999] flex flex-col items-center justify-center rounded-md bg-black dark:bg-white opacity-50 px-4 py-2 text-xs md:shadow-xl"
+                role="tooltip"
+                id={`tooltip-${item.id}`}
+                aria-live="polite"
               >
                 <div className="relative z-[999] text-base font-bold dark:text-neutral-700 text-neutral-400">
                   {item.name}

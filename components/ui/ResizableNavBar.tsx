@@ -9,7 +9,7 @@ import {
 } from "motion/react";
 import Image from "next/image";
 
-import React, { useRef, useState } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import { useModal } from "./modal/AnimatedModal";
 import ReactDOM from "react-dom";
 import { buttons } from "@/data";
@@ -90,6 +90,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
   return (
     <motion.div
       animate={{
+        // Blur dan shadow hanya aktif di desktop (md: ke atas)
         backdropFilter: visible ? "blur(10px)" : "none",
         boxShadow: visible
           ? "0 0 24px rgba(34, 42, 53, 0.06), 0 1px 1px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(34, 42, 53, 0.04), 0 0 4px rgba(34, 42, 53, 0.08), 0 16px 68px rgba(47, 48, 55, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1) inset"
@@ -107,7 +108,8 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
       }}
       className={cn(
         "relative z-[60] mx-auto max-w-7xl hidden w-full flex-row items-center justify-between self-start rounded-full bg-transparent px-4 py-2 dark:bg-transparent lg:flex",
-        visible && "bg-white/80 dark:bg-neutral-950/80",
+        visible &&
+          "md:bg-white/80 md:dark:bg-neutral-950/80 md:backdrop-blur-md",
         className
       )}
     >
@@ -119,9 +121,12 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
 export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
   const [hovered, setHovered] = useState<number | null>(null);
 
+  const handleMouseEnter = useCallback((idx: number) => setHovered(idx), []);
+  const handleMouseLeave = useCallback(() => setHovered(null), []);
+
   return (
     <motion.div
-      onMouseLeave={() => setHovered(null)}
+      onMouseLeave={handleMouseLeave}
       className={cn(
         "absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium text-zinc-600 transition duration-200 hover:text-zinc-800 lg:flex lg:space-x-2",
         className
@@ -129,7 +134,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
     >
       {items.map((item, idx) => (
         <a
-          onMouseEnter={() => setHovered(idx)}
+          onMouseEnter={() => handleMouseEnter(idx)}
           onClick={onItemClick}
           className="relative px-4 py-2 text-neutral-700 dark:text-neutral-400"
           key={`link-${idx}`}
@@ -152,6 +157,7 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
   return (
     <motion.div
       animate={{
+        // Blur dan shadow hanya aktif di desktop (md: ke atas)
         backdropFilter: visible ? "blur(10px)" : "none",
         boxShadow: visible
           ? "0 0 24px rgba(34, 42, 53, 0.06), 0 1px 1px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(34, 42, 53, 0.04), 0 0 4px rgba(34, 42, 53, 0.08), 0 16px 68px rgba(47, 48, 55, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1) inset"
@@ -169,7 +175,8 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
       }}
       className={cn(
         "relative z-50 mx-auto flex w-full max-w-[calc(100vw-2rem)] flex-col items-center justify-between bg-transparent px-0 py-2 lg:hidden",
-        visible && "bg-white/80 dark:bg-neutral-950/80",
+        visible &&
+          "md:bg-white/80 md:dark:bg-neutral-950/80 md:backdrop-blur-md",
         className
       )}
     >
@@ -225,15 +232,27 @@ export const MobileNavToggle = ({
   isOpen: boolean;
   onClick: () => void;
 }) => {
+  const label = isOpen ? "Tutup menu navigasi" : "Buka menu navigasi";
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter" || e.key === " ") onClick();
+  };
   return isOpen ? (
     <IconX
       className="text-neutral-700 dark:text-neutral-400"
       onClick={onClick}
+      aria-label={label}
+      role="button"
+      tabIndex={0}
+      onKeyDown={handleKeyDown}
     />
   ) : (
     <IconMenu2
       className="text-neutral-700 dark:text-neutral-400"
       onClick={onClick}
+      aria-label={label}
+      role="button"
+      tabIndex={0}
+      onKeyDown={handleKeyDown}
     />
   );
 };
@@ -315,6 +334,8 @@ export const NavbarButton: React.FC<NavbarButtonProps> = ({
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   onClick={closeModal}
+                  role="dialog"
+                  aria-modal="true"
                 >
                   <motion.div
                     className="relative bg-white dark:bg-neutral-800 p-6 shadow-lg rounded-xl w-[90%] max-w-md"

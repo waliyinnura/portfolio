@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
-import { useState } from "react";
+import { memo, useCallback, useState } from "react";
 import { PointerHighlight } from "./PointerHighlight";
 
 const HoverEffect = ({
@@ -19,6 +19,11 @@ const HoverEffect = ({
   className?: string;
 }) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const handleMouseEnter = useCallback(
+    (idx: number) => setHoveredIndex(idx),
+    []
+  );
+  const handleMouseLeave = useCallback(() => setHoveredIndex(null), []);
 
   return (
     <div className="w-full">
@@ -49,8 +54,11 @@ const HoverEffect = ({
             target="_blank"
             key={item.id}
             className="relative group block p-2"
-            onMouseEnter={() => setHoveredIndex(idx)}
-            onMouseLeave={() => setHoveredIndex(null)}
+            onMouseEnter={() => handleMouseEnter(idx)}
+            onMouseLeave={handleMouseLeave}
+            role="button"
+            tabIndex={0}
+            aria-label={item.title}
           >
             <AnimatePresence>
               {hoveredIndex === idx && (
@@ -83,70 +91,85 @@ const HoverEffect = ({
   );
 };
 
-export const Card = ({
-  className,
-  children,
-}: {
-  className?: string;
-  children: React.ReactNode;
-}) => {
+export const Card = memo(
+  ({
+    className,
+    children,
+  }: {
+    className?: string;
+    children: React.ReactNode;
+  }) => {
+    return (
+      <div
+        className={cn(
+          "rounded-2xl h-full w-full p-4 overflow-hidden bg-neutral-200 dark:bg-black-200 border border-transparent group-hover:border-slate-700 relative z-20",
+          className
+        )}
+      >
+        <div className="relative z-50">{children}</div>
+      </div>
+    );
+  }
+);
+Card.displayName = "Card";
+
+export const CardTitle = memo(
+  ({
+    className,
+    children,
+  }: {
+    className?: string;
+    children: React.ReactNode;
+  }) => {
+    return (
+      <h3
+        className={cn(
+          "text-black-200 dark:text-zinc-100 font-bold text-left tracking-wide my-4",
+          className
+        )}
+      >
+        {children}
+      </h3>
+    );
+  }
+);
+CardTitle.displayName = "CardTitle";
+
+export const CardDescription = memo(
+  ({
+    className,
+    children,
+  }: {
+    className?: string;
+    children: React.ReactNode;
+  }) => {
+    return (
+      <p
+        className={cn(
+          "my-1 text-black dark:text-zinc-400 tracking-wide leading-relaxed text-sm",
+          className
+        )}
+      >
+        {children}
+      </p>
+    );
+  }
+);
+CardDescription.displayName = "CardDescription";
+
+export const CardImage = memo(({ img }: { img: string }) => {
   return (
-    <div
-      className={cn(
-        "rounded-2xl h-full w-full p-4 overflow-hidden bg-neutral-200 dark:bg-black-200 border border-transparent group-hover:border-slate-700 relative z-20",
-        className
-      )}
-    >
-      <div className="relative z-50">{children}</div>
+    <div className="h-44 sm:h-60 md:h-44 w-full relative bg-transparent transition-transform duration-300 group-hover:scale-105">
+      <Image
+        src={img}
+        alt="cover"
+        fill
+        sizes="100%"
+        className="rounded-t-2xl absolute inset-0 object-cover object-center mix-blend-multiply"
+      />
     </div>
   );
-};
-export const CardTitle = ({
-  className,
-  children,
-}: {
-  className?: string;
-  children: React.ReactNode;
-}) => {
-  return (
-    <h3
-      className={cn(
-        "text-black-200 dark:text-zinc-100 font-bold text-left tracking-wide my-4",
-        className
-      )}
-    >
-      {children}
-    </h3>
-  );
-};
-export const CardDescription = ({
-  className,
-  children,
-}: {
-  className?: string;
-  children: React.ReactNode;
-}) => {
-  return (
-    <p
-      className={cn(
-        "my-1 text-black dark:text-zinc-400 tracking-wide leading-relaxed text-sm",
-        className
-      )}
-    >
-      {children}
-    </p>
-  );
-};
-export const CardImage = ({ img }: { img: string }) => (
-  <div className="h-44 sm:h-60 md:h-44 w-full relative bg-transparent transition-transform duration-300 group-hover:scale-105">
-    <Image
-      src={img}
-      alt="cover"
-      fill
-      sizes="100%"
-      className="rounded-t-2xl absolute inset-0 object-cover object-center mix-blend-multiply"
-    />
-  </div>
-);
+});
+CardImage.displayName = "CardImage";
 
 export default HoverEffect;

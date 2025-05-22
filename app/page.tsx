@@ -3,10 +3,22 @@
 import dynamic from "next/dynamic";
 import Footer from "@/components/Footer";
 import { ResizableNavbar } from "@/components/Navbar";
-const Hero = dynamic(() => import("@/components/Hero"));
-const Grid = dynamic(() => import("@/components/Grid"));
-const WorkExperiences = dynamic(() => import("@/components/WorkExperiences"));
-const Projects = dynamic(() => import("@/components/Projects"));
+const Hero = dynamic(() => import("@/components/Hero"), {
+  ssr: false,
+  loading: () => <div style={{ height: 400 }} />,
+});
+const Grid = dynamic(() => import("@/components/Grid"), {
+  ssr: false,
+  loading: () => <div style={{ height: 400 }} />,
+});
+const WorkExperiences = dynamic(() => import("@/components/WorkExperiences"), {
+  ssr: false,
+  loading: () => <div style={{ height: 400 }} />,
+});
+const Projects = dynamic(() => import("@/components/Projects"), {
+  ssr: false,
+  loading: () => <div style={{ height: 400 }} />,
+});
 
 export default function Home() {
   return (

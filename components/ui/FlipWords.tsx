@@ -36,6 +36,7 @@ export const FlipWords = ({
       }}
     >
       <motion.div
+        aria-live="polite"
         initial={{
           opacity: 0,
           y: 10,

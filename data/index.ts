@@ -189,16 +189,19 @@ export const workExperience = [
 export const socialMedia = [
   {
     id: 1,
+    name: "Github",
     img: "/git.svg",
     url: "https://github.com/waliyinnura",
   },
   {
     id: 2,
+    name: "Instagram",
     img: "/insta.svg",
     url: "https://www.instagram.com/waliyinnura",
   },
   {
     id: 3,
+    name: "LinkedIn",
     img: "/link.svg",
     url: "https://www.linkedin.com/in/waliyinnura",
   },

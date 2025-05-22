@@ -21,6 +21,19 @@ const Timeline = memo(({ data }: { data: TimelineEntry[] }) => {
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const node = ref.current;
+    const observer = new window.IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { threshold: 0.2 }
+    );
+    if (node) observer.observe(node);
+    return () => {
+      if (node) observer.unobserve(node);
+    };
+  }, []);
 
   useEffect(() => {
     if (ref.current) {
@@ -46,15 +59,15 @@ const Timeline = memo(({ data }: { data: TimelineEntry[] }) => {
           This is <span className="text-blue-300">my</span>
           <br />
           <span className="mt-1 text-3xl font-bold leading-none md:text-6xl lg:text-7xl">
-            <FlipWords words={wordsExperiences} />
+            {isVisible ? <FlipWords words={wordsExperiences} /> : "Experiences"}
           </span>
         </h1>
       </div>
 
       <div ref={ref} className="relative max-w-7xl pb-20">
-        {data.map((item, index) => (
+        {data.map((item) => (
           <div
-            key={index}
+            key={item.id}
             className="flex justify-start pt-10 md:gap-10 md:pt-40"
           >
             <div className="sticky top-40 z-40 flex max-w-xs flex-col items-center self-start md:w-full md:flex-row lg:max-w-sm">

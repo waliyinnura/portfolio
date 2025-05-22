@@ -20,7 +20,7 @@ const Footer = () => {
         <a href="mailto:waliyinnura@gmail.com" className="mt-5">
           <MagicButton
             title="Get in touch"
-            icon={<FaLocationArrow />}
+            icon={<FaLocationArrow aria-hidden="true" />}
             position="right"
           />
         </a>
@@ -37,10 +37,11 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 bg-black-300 rounded-lg flex justify-center items-center"
+              aria-label={media.name} // aksesibilitas
             >
               <Image
                 src={media.img}
-                alt="icons"
+                alt={media.name} // aksesibilitas
                 width={20}
                 height={20}
                 loading="lazy"

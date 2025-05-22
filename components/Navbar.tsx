@@ -10,13 +10,23 @@ import {
   MobileNavToggle,
   MobileNavMenu,
 } from "@/components/ui/ResizableNavBar";
+import dynamic from "next/dynamic";
 import { navItems } from "@/data";
-import { useState } from "react";
-import { ThemeSwitcher } from "./ui/ThemeSwitcher";
+import { useCallback, useState } from "react";
+const ThemeSwitcher = dynamic(() => import("./ui/ThemeSwitcher"));
 import { ModalProvider } from "./ui/modal/AnimatedModal";
 
 export function ResizableNavbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Handler untuk toggle menu
+  const handleToggleMenu = useCallback(
+    () => setIsMobileMenuOpen((open) => !open),
+    []
+  );
+
+  // Handler untuk close menu
+  const handleCloseMenu = useCallback(() => setIsMobileMenuOpen(false), []);
 
   return (
     <div className="relative w-full max-w-7xl z-[999]">
@@ -27,9 +37,7 @@ export function ResizableNavbar() {
           <NavItems items={navItems} />
           <div className="flex gap-4">
             <ThemeSwitcher />
-            <ModalProvider>
-              <NavbarButton variant="secondary">Book a call</NavbarButton>
-            </ModalProvider>
+            <NavbarButton variant="secondary">Book a call</NavbarButton>
           </div>
         </NavBody>
 
@@ -39,20 +47,22 @@ export function ResizableNavbar() {
             <NavbarLogo />
             <MobileNavToggle
               isOpen={isMobileMenuOpen}
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              onClick={handleToggleMenu}
+              aria-label={
+                isMobileMenuOpen ? "Tutup menu navigasi" : "Buka menu navigasi"
+              }
             />
           </MobileNavHeader>
 
-          <MobileNavMenu
-            isOpen={isMobileMenuOpen}
-            onClose={() => setIsMobileMenuOpen(false)}
-          >
+          <MobileNavMenu isOpen={isMobileMenuOpen} onClose={handleCloseMenu}>
             {navItems.map((item, idx) => (
               <a
                 key={`mobile-link-${idx}`}
                 href={item.link}
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={handleCloseMenu}
                 className="relative text-neutral-700 dark:text-neutral-400"
+                aria-label={item.name}
+                tabIndex={0}
               >
                 <span className="block">{item.name}</span>
               </a>
