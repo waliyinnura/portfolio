@@ -1,9 +1,10 @@
-import React from "react";
-import { HoverEffect } from "./ui/HoverEffect";
+import { memo } from "react";
+import dynamic from "next/dynamic";
+const HoverEffect = dynamic(() => import("./ui/HoverEffect"));
 import { projects } from "@/data";
 import { LinkPreview } from "./ui/LinkPreview";
 
-const Projects = React.memo(() => {
+const Projects = memo(() => {
   return (
     <section id="projects" className="w-full mx-auto px-4">
       <HoverEffect items={projects} />

@@ -1,6 +1,6 @@
 "use client";
 import { useScroll, useTransform, motion } from "motion/react";
-import React, { useEffect, useRef, useState } from "react";
+import { memo, useEffect, useRef, useState } from "react";
 import { LinkPreview } from "./LinkPreview";
 import { AnimatedTooltip } from "./AnimatedTooltip";
 import { FlipWords } from "./FlipWords";
@@ -17,7 +17,7 @@ export interface TimelineEntry {
   iconLists: { id: number; name: string; image: string }[];
 }
 
-export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
+const Timeline = memo(({ data }: { data: TimelineEntry[] }) => {
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
@@ -111,4 +111,8 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       </div>
     </div>
   );
-};
+});
+
+Timeline.displayName = "Timeline";
+
+export default Timeline;

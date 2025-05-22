@@ -1,8 +1,9 @@
-import React from "react";
-import { Timeline } from "./ui/Timeline";
+import { memo } from "react";
+import dynamic from "next/dynamic";
+const Timeline = dynamic(() => import("./ui/Timeline"));
 import { workExperience } from "@/data";
 
-const WorkExperiences = React.memo(() => {
+const WorkExperiences = memo(() => {
   return (
     <section id="experiences">
       <div className="relative w-full overflow-clip px-5">

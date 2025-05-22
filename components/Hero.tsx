@@ -1,8 +1,8 @@
-import React from "react";
+import { memo } from "react";
 import { FlipWords } from "./ui/FlipWords";
 import { wordsHero } from "@/data";
 
-const Hero = React.memo(() => {
+const Hero = memo(() => {
   return (
     <section id="hero" className="relative w-full pb-20 pt-36 overflow-hidden">
       <div className="absolute inset-0 flex h-screen items-center justify-center bg-dot-neutral-700 bg-white dark:bg-black opacity-20 dark:opacity-60">

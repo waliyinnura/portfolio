@@ -1,8 +1,15 @@
-import React from "react";
-import { BentoGrid, BentoGridItem } from "./ui/BentoGrid";
+import { memo } from "react";
+import dynamic from "next/dynamic";
 import { gridItems } from "@/data";
 
-const Grid = React.memo(() => {
+const BentoGrid = dynamic(() =>
+  import("./ui/BentoGrid").then((mod) => mod.BentoGrid)
+);
+const BentoGridItem = dynamic(() =>
+  import("./ui/BentoGrid").then((mod) => mod.BentoGridItem)
+);
+
+const Grid = memo(() => {
   return (
     <section id="about">
       <BentoGrid className="relative w-full py-20 px-5">

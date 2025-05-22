@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { PointerHighlight } from "./PointerHighlight";
 
-export const HoverEffect = ({
+const HoverEffect = ({
   items,
   className,
 }: {
@@ -148,3 +148,5 @@ export const CardImage = ({ img }: { img: string }) => (
     />
   </div>
 );
+
+export default HoverEffect;
