@@ -25,7 +25,7 @@ export const HoverEffect = ({
       <div className="mx-auto max-w-7xl py-20 text-center">
         <h2 className="text-xl md:text-2xl font-semibold text-neutral-700 dark:text-neutral-400 z-50">
           Take a <span className="text-blue-300">look</span> at <br />
-          <span className="mt-1 text-4xl font-bold leading-none md:text-7xl">
+          <span className="mt-1 text-3xl font-bold leading-none md:text-6xl lg:text-7xl">
             My Recent
             <PointerHighlight
               rectangleClassName="bg-neutral-400 border-neutral-400 leading-loose opacity-25"
@@ -55,12 +55,17 @@ export const HoverEffect = ({
             <AnimatePresence>
               {hoveredIndex === idx && (
                 <motion.span
-                  className="absolute inset-0 h-full w-full bg-neutral-400 dark:bg-slate-400/[0.8] hidden md:block rounded-3xl"
+                  className="absolute inset-0 h-full w-full bg-neutral-400/[0.8] dark:bg-neutral-700/[0.8] hidden md:block rounded-3xl"
                   layoutId="hoverBackground"
                   initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.15 }}
+                  animate={{
+                    opacity: 1,
+                    transition: { duration: 0.15 },
+                  }}
+                  exit={{
+                    opacity: 0,
+                    transition: { duration: 0.15, delay: 0.2 },
+                  }}
                 />
               )}
             </AnimatePresence>

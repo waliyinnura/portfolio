@@ -270,7 +270,7 @@ export const socialMedia = [
   },
 ];
 
-export const words = [
+export const wordsExperiences = [
   "Experiences",
   "Pengalaman",
   "Expériences",
@@ -286,6 +286,14 @@ export const words = [
   "Εμπειρίες",
   "Doświadczenia",
   "Erfarenheter",
+];
+
+export const wordsHero = [
+  "Software",
+  "Backend",
+  "Frontend",
+  "Fullstack",
+  "Game",
 ];
 
 export const buttons = [

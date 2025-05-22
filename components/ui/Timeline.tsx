@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { LinkPreview } from "./LinkPreview";
 import { AnimatedTooltip } from "./AnimatedTooltip";
 import { FlipWords } from "./FlipWords";
-import { words } from "@/data";
+import { wordsExperiences } from "@/data";
 
 export interface TimelineEntry {
   id: number;
@@ -45,8 +45,8 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         <h1 className="text-xl md:text-2xl font-semibold text-neutral-700 dark:text-neutral-400">
           This is <span className="text-blue-300">my</span>
           <br />
-          <span className="mt-1 text-4xl font-bold leading-none md:text-7xl">
-            <FlipWords words={words} />
+          <span className="mt-1 text-3xl font-bold leading-none md:text-6xl lg:text-7xl">
+            <FlipWords words={wordsExperiences} />
           </span>
         </h1>
       </div>

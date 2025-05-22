@@ -1,4 +1,6 @@
 import React from "react";
+import { FlipWords } from "./ui/FlipWords";
+import { wordsHero } from "@/data";
 
 const Hero = () => (
   <section id="hero" className="relative w-full pb-20 pt-36 overflow-hidden">
@@ -7,15 +9,17 @@ const Hero = () => (
     </div>
     <div className="relative z-10 my-20 flex justify-center">
       <div className="flex max-w-[89vw] flex-col items-center justify-center md:max-w-2xl lg:max-w-[60vw]">
-        <h2 className="max-w-80 text-center text-xs uppercase tracking-widest text-neutral-700 dark:text-neutral-400 pb-2">
+        <h2 className="max-w-80 text-center text-[0.6rem] md:text-xs uppercase tracking-widest text-neutral-700 dark:text-neutral-400 pb-2">
           Well Portfolio
         </h2>
-        <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-400 to-neutral-700 dark:from-neutral-50 dark:to-neutral-400 bg-opacity-80 dark:bg-opacity-50">
-          Transforming Your Idea Into Reality
+        <h1 className="text-3xl md:text-6xl lg:text-7xl font-bold text-center text-neutral-700 dark:text-neutral-400 ">
+          Transforming Your Idea Into{" "}
+          <span className="text-blue-300">Reality</span>
         </h1>
-        <p className="my-4 font-normal text-sm md:text-base text-black-200 dark:text-neutral-300 max-w-lg text-center mx-auto">
-          Hi! I&apos;m Well, a Software Developer based in Indonesia.
-        </p>
+        <span className="my-4 font-normal text-xs md:text-base text-neutral-700 dark:text-neutral-400 max-w-lg text-center mx-auto">
+          Hi! I&apos;m Well, a <FlipWords words={wordsHero} /> Developer based
+          in Indonesia.
+        </span>
       </div>
     </div>
   </section>

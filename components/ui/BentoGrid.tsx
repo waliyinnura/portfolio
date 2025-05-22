@@ -63,11 +63,11 @@ export const BentoGridItem = ({
 
           {id === 5 && (
             <div className="absolute flex w-fit gap-1 right-8 md:gap-3 lg:gap-5">
-              <div className="flex flex-col gap-3 md:gap-6 lg:gap-8">
+              <div className="flex flex-col gap-1 md:gap-6 lg:gap-8">
                 {iconLeftLists.map((item, i) => (
                   <div
                     key={i}
-                    className="rounded-full bg-neutral-200 dark:bg-stone-700 px-3 py-2 md:px-4 md:py-4"
+                    className="rounded-full bg-neutral-200 dark:bg-stone-700 px-2 py-2 md:px-4 md:py-4"
                   >
                     <Image
                       height={100}
@@ -80,11 +80,11 @@ export const BentoGridItem = ({
                   </div>
                 ))}
               </div>
-              <div className="flex flex-col gap-3 md:gap-6 lg:gap-8">
+              <div className="flex flex-col gap-1 md:gap-6 lg:gap-8">
                 {iconRightLists.map((item, i) => (
                   <span
                     key={i}
-                    className="rounded-full bg-neutral-200 dark:bg-stone-700 px-3 py-2 text-center text-xs md:px-4 md:py-4"
+                    className="rounded-full bg-neutral-200 dark:bg-stone-700 px-2 py-2 text-center text-xs md:px-4 md:py-4"
                   >
                     <Image
                       height={100}
