@@ -8,7 +8,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[url('/footer-grid.svg')] bg-cover bg-center pt-20 pb-5 px-5">
+    <footer className="md:bg-[url('/footer-grid.svg')] bg-cover bg-center pt-20 pb-5 px-5">
       <div className="flex flex-col items-center">
         <h1 className="text-2xl md:text-5xl font-bold text-center text-neutral-700 dark:text-neutral-400">
           Improve your <span className="text-blue-300">digital</span> presence
