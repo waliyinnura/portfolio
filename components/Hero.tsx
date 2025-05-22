@@ -17,8 +17,8 @@ const Hero = () => (
           <span className="text-blue-300">Reality</span>
         </h1>
         <span className="my-4 font-normal text-xs md:text-base text-neutral-700 dark:text-neutral-400 max-w-lg text-center mx-auto">
-          Hi! I&apos;m Well, a <FlipWords words={wordsHero} /> Developer based
-          in Indonesia.
+          Hi! I&apos;m Well, a <FlipWords words={wordsHero} />
+          Developer based in Indonesia.
         </span>
       </div>
     </div>
