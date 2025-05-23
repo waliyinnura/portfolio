@@ -142,6 +142,7 @@ export const LinkPreview = ({
                     className="rounded-lg"
                     alt={`Preview of ${url}`}
                   />
+                  <span className="sr-only">Visit {url}</span>
                 </a>
               </motion.div>
             )}
