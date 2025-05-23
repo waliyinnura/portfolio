@@ -30,12 +30,19 @@ export const BentoGridItem = memo(
     description,
     className,
     titleClassName,
+    bgImage,
   }: {
     id?: number;
     title?: string;
     description?: string;
     className?: string;
     titleClassName?: string;
+    bgImage?: {
+      src: string;
+      alt: string;
+      className?: string;
+      priority?: boolean;
+    };
   }) => {
     return (
       <div
@@ -59,24 +66,23 @@ export const BentoGridItem = memo(
             >
               {title}
             </div>
-
-            {id === 1 && (
+            {bgImage && (
               <Image
-                src={"/map.svg"}
-                alt="map"
+                src={bgImage.src}
+                alt={bgImage.alt}
                 width={100}
                 height={100}
-                className={
-                  "absolute h-fit w-fit overflow-hidden -bottom-20 -right-20 md:-bottom-40 lg:-bottom-20 lg:-right-20"
-                }
-                loading="lazy"
-                decoding="async"
-                priority={false}
+                className={cn(
+                  "absolute h-fit w-fit overflow-hidden",
+                  bgImage.className
+                )}
+                priority={true}
+                style={{ width: "auto", height: "auto" }}
               />
             )}
 
             {id === 5 && (
-              <div className="absolute flex w-fit gap-1 right-8 md:gap-3 lg:gap-5">
+              <div className="absolute flex w-fit gap-1 right-4 md:gap-3 lg:gap-5">
                 <div className="flex flex-col gap-1 md:gap-6 lg:gap-8">
                   {iconLeftLists.map((item, i) => (
                     <div
@@ -88,7 +94,7 @@ export const BentoGridItem = memo(
                         width={100}
                         src={item.image}
                         alt={item.name}
-                        className="relative !m-0 object-cover object-top !p-0 transition duration-500 group-hover:z-[999] group-hover:scale-105 rounded-full bg-transparent lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
+                        className="relative !m-0 object-cover object-top !p-0 transition duration-500 group-hover:z-[999] group-hover:scale-105 bg-transparent lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
                       />
                     </div>
                   ))}
@@ -104,7 +110,7 @@ export const BentoGridItem = memo(
                         width={100}
                         src={item.image}
                         alt={item.name}
-                        className="relative !m-0 object-cover object-top !p-0 transition duration-500 group-hover:z-[999] group-hover:scale-105 rounded-full bg-transparent lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
+                        className="relative !m-0 object-cover object-top !p-0 transition duration-500 group-hover:z-[999] group-hover:scale-105 bg-transparent lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
                       />
                     </span>
                   ))}

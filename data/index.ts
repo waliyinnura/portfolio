@@ -16,6 +16,11 @@ export const gridItems = [
     description: "",
     className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[30vh]",
     titleClassName: "justify-start",
+    bgImage: {
+      src: "/map.svg",
+      alt: 'map',
+      className: "-bottom-20 -right-20 md:-bottom-40 lg:-bottom-20 lg:-right-20"
+    }
   },
   {
     id: 2,
@@ -45,6 +50,11 @@ export const gridItems = [
     description: "I constantly try to improve",
     className: "md:col-span-3 md:row-span-2 ",
     titleClassName: "justify-center",
+    bgImage: {
+      src: "/abstract-bg.svg",
+      alt: 'abstract',
+      className: "opacity-30 top-0 -left-20 md:top-20 lg:-left-40"
+    }
   },
   {
     id: 6,
@@ -61,7 +71,7 @@ export const projects = [
     title: "StarWALLET",
     des: "Explore the wonders of our solar system with this captivating 3D simulation of the planets using Three.js.",
     img: "/starwallet.png",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
+    iconLists: ["/re.svg", "/tailwind.svg", "/ts.svg", "/three.svg", "/fm.svg"],
     link: "https://starwallet.club",
   },
   {
@@ -69,7 +79,7 @@ export const projects = [
     title: "StarHOSPITALITY Club",
     des: "Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.",
     img: "/shc.png",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
+    iconLists: ["/next.svg", "/tailwind.svg", "/ts.svg", "/stream.svg", "/c.svg"],
     link: "https://starhospitality.club",
   },
   {
@@ -77,7 +87,7 @@ export const projects = [
     title: "AItress",
     des: "AItress is a chatbot telegram AI based using NLP.",
     img: "/aitress.png",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
+    iconLists: ["/re.svg", "/tailwind.svg", "/ts.svg", "/three.svg", "/c.svg"],
     link: "https://t.me/aitressbot",
   },
   {
@@ -85,7 +95,7 @@ export const projects = [
     title: "Ecommerce Template",
     des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
     img: "/ecommerce.png",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
+    iconLists: ["/next.svg", "/tailwind.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
     link: "https://badlixvictoryu.vercel.app/",
   },
 ];
@@ -143,8 +153,8 @@ export const workExperience = [
       },
       {
         id: 2,
-        name: "Tailwind CSS",
-        image: "/tail.svg",
+        name: "tailwindwind CSS",
+        image: "/tailwind.svg",
       },
       {
         id: 3,
@@ -259,8 +269,8 @@ export const iconRightLists = [
   },
   {
     id: 3,
-    name: "Tailwind CSS",
-    image: "/tail.svg",
+    name: "tailwindwind CSS",
+    image: "/tailwind.svg",
   },
 ];
 

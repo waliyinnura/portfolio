@@ -14,7 +14,7 @@ const Grid = memo(() => {
     <section id="about">
       <BentoGrid className="relative w-full py-20 px-5">
         {gridItems.map(
-          ({ id, title, description, className, titleClassName }) => (
+          ({ id, title, description, className, titleClassName, bgImage }) => (
             <BentoGridItem
               key={id}
               id={id}
@@ -22,6 +22,7 @@ const Grid = memo(() => {
               description={description}
               className={className}
               titleClassName={titleClassName}
+              bgImage={bgImage}
             />
           )
         )}

@@ -28,7 +28,7 @@ const Hero = memo(() => {
           <h2 className="max-w-80 text-center text-[0.6rem] md:text-xs uppercase tracking-widest text-neutral-700 dark:text-neutral-400 pb-2">
             Well Portfolio
           </h2>
-          <h1 className="text-2xl md:text-6xl lg:text-7xl font-bold text-center text-neutral-700 dark:text-neutral-400 ">
+          <h1 className="text-3xl md:text-6xl lg:text-7xl font-bold text-center text-neutral-700 dark:text-neutral-400 ">
             Transforming Your Idea Into{" "}
             <span className="text-blue-300">Reality</span>
           </h1>
