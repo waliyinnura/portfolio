@@ -80,9 +80,9 @@ const Timeline = memo(({ data }: { data: TimelineEntry[] }) => {
             </div>
 
             <div className="relative w-full pl-20 pr-4 md:pl-4">
-              <h3 className="mb-4 block text-left text-2xl font-bold text-neutral-700 dark:text-neutral-400 md:hidden">
+              <h2 className="mb-4 block text-left text-2xl font-bold text-neutral-700 dark:text-neutral-400 md:hidden">
                 {item.title}
-              </h3>
+              </h2>
               <div className="relative">
                 <LinkPreview
                   url={
