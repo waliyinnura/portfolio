@@ -12,7 +12,6 @@ import Image from "next/image";
 import React, { useCallback, useRef, useState } from "react";
 import { useModal } from "./modal/AnimatedModal";
 import ReactDOM from "react-dom";
-import { buttons } from "@/data";
 
 interface NavbarProps {
   children: React.ReactNode;
