@@ -13,7 +13,7 @@ const Projects = memo(() => {
           url="https://github.com/waliyinnura?tab=repositories"
           className="font-bold"
         >
-          See more
+          See Github
         </LinkPreview>
       </div>
     </section>
