@@ -344,33 +344,18 @@ export const NavbarButton: React.FC<NavbarButtonProps> = ({
                     exit={{ scale: 0.8, opacity: 0 }}
                     onClick={(e) => e.stopPropagation()}
                   >
-                    {/* Modal Title */}
                     <h2 className="text-xl font-semibold text-center mb-4">
-                      Select an Option
+                      Click here to download
                     </h2>
-
-                    {/* Buttons in Grid */}
                     <div className="grid grid-cols-1 gap-4">
-                      {buttons.map((button, index) => (
-                        <a
-                          key={index}
-                          href={button.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-full px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition text-center"
-                        >
-                          {button.label}
-                        </a>
-                      ))}
+                      <a
+                        href="/CV.pdf"
+                        download="CV_Well.pdf"
+                        className="w-full px-4 py-2 bg-blue-400 text-white rounded hover:bg-blue-600 transition text-center"
+                      >
+                        Download CV
+                      </a>
                     </div>
-
-                    {/* Close Button */}
-                    <button
-                      onClick={closeModal}
-                      className="mt-6 w-full px-4 py-2 bg-gray-300 text-gray-700 rounded hover:bg-gray-400 transition"
-                    >
-                      Close
-                    </button>
                   </motion.div>
                 </motion.div>
               )}

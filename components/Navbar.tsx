@@ -37,7 +37,7 @@ export function ResizableNavbar() {
           <NavItems items={navItems} />
           <div className="flex gap-4">
             <ThemeSwitcher />
-            <NavbarButton variant="secondary">Book a call</NavbarButton>
+            <NavbarButton variant="secondary">My CV</NavbarButton>
           </div>
         </NavBody>
 
@@ -70,7 +70,7 @@ export function ResizableNavbar() {
             <div className="flex w-full flex-col gap-4">
               <ModalProvider>
                 <NavbarButton variant="secondary" className="w-full">
-                  Book a call
+                  My CV
                 </NavbarButton>
               </ModalProvider>
             </div>

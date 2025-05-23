@@ -1,12 +1,7 @@
-//Example
-
-// import { getList } from "@/services/service";
-
 export const navItems = [
   { name: "About", link: "#about" },
   { name: "Experiences", link: "#experiences" },
   { name: "Projects", link: "#projects" },
-  { name: "Phase", link: "#phase" },
 ];
 
 export const gridItems = [
@@ -247,12 +242,18 @@ export const buttons = [
   {
     label: "Email",
     href: `mailto:${process.env.NEXT_PUBLIC_EMAIL}?subject=${encodeURIComponent("Booking Project Collaboration")}`,
-    onClick: () => console.log("Redirectin to email..."),
+    onClick: () => console.log("Redirecting to email..."),
   },
   {
     label: "Whatsapp",
     href: process.env.NEXT_PUBLIC_WHATSAPP,
-    onClick: () => console.log("Redirectin to whatsapp..."),
+    onClick: () => console.log("Redirecting to whatsapp..."),
+  },
+  {
+    label: "Download CV",
+    href: "/CV.pdf",
+    download: "CV_Well.pdf",
+    onClick: () => console.log("Downloading CV..."),
   },
 ];
 
