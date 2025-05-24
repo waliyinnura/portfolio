@@ -14,6 +14,12 @@ interface ModalContextType {
 
 const ModalContext = createContext<ModalContextType | undefined>(undefined);
 
+/**
+ * Provides the modal context to the children components.
+ *
+ * @param {ReactNode} children Children components that will have access to the modal context.
+ * @returns {JSX.Element} The children component with the modal context.
+ */
 export const ModalProvider = ({ children }: { children: ReactNode }) => {
   const [open, setOpen] = useState(false);
   const value = useMemo(() => ({ open, setOpen }), [open]);
@@ -22,6 +28,14 @@ export const ModalProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
+/**
+ * Custom hook to access the modal context.
+ *
+ * @returns {ModalContextType} The current modal context value.
+ * @throws Will throw an error if used outside of a ModalProvider.
+ * @example
+ * const { open, setOpen } = useModal();
+ */
 export const useModal = () => {
   const context = useContext(ModalContext);
   if (!context) {

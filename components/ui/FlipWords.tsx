@@ -3,6 +3,18 @@ import React, { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
+/**
+ * FlipWords is a React component that takes an array of words and
+ * displays them one at a time, animating the transition between each
+ * word. The animation is a spring animation that moves the word up and
+ * down while also fading it in and out.
+ *
+ * @param words an array of strings
+ * @param duration the duration of the animation in milliseconds
+ * @param className a class name to add to the component
+ * @returns a React component
+ */
+
 export const FlipWords = ({
   words,
   duration = 3000,
@@ -15,7 +27,6 @@ export const FlipWords = ({
   const [currentWord, setCurrentWord] = useState(words[0]);
   const [isAnimating, setIsAnimating] = useState<boolean>(false);
 
-  // thanks for the fix Julian - https://github.com/Julian-AT
   const startAnimation = useCallback(() => {
     const word = words[words.indexOf(currentWord) + 1] || words[0];
     setCurrentWord(word);

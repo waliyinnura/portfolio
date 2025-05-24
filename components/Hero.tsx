@@ -2,6 +2,13 @@ import { memo, useEffect, useRef, useState } from "react";
 import { FlipWords } from "./ui/FlipWords";
 import { wordsHero } from "@/data";
 
+/**
+ * The Hero component.
+ *
+ * @remarks
+ * This component renders the hero section of the website. It displays a
+ * heading with a rotating word and a call to action button.
+ */
 const Hero = memo(() => {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);

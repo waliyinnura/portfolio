@@ -17,6 +17,13 @@ export interface TimelineEntry {
   iconLists: { id: number; name: string; image: string }[];
 }
 
+/**
+ * Timeline component to display a list of timeline entries.
+ *
+ * @param {Object} props - The component props.
+ * @param {TimelineEntry[]} props.data - An array of timeline entries to display.
+ * @returns {JSX.Element} The rendered timeline component.
+ */
 const Timeline = memo(({ data }: { data: TimelineEntry[] }) => {
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);

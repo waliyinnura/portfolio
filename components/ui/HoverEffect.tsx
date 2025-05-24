@@ -4,6 +4,22 @@ import Image from "next/image";
 import { memo, useCallback, useState } from "react";
 import { PointerHighlight } from "./PointerHighlight";
 
+/**
+ * A component that renders a list of items with a hover effect that appears when
+ * the item is hovered. The hover effect is an animated background that fades in
+ * when the item is hovered and fades out when the item is no longer hovered.
+ *
+ * @param {object} props
+ * @prop {object[]} items An array of objects with the properties:
+ *   - id (number): The id of the item
+ *   - title (string): The title of the item
+ *   - des (string): The description of the item
+ *   - img (string): The URL of the image for the item
+ *   - iconLists (string[]): An array of strings representing the icon lists
+ *   - link (string): The URL of the link for the item
+ * @prop {string} [className] The class name of the component
+ * @returns The JSX element for the component
+ */
 const HoverEffect = ({
   items,
   className,
@@ -91,6 +107,26 @@ const HoverEffect = ({
   );
 };
 
+/**
+ * The Card component.
+ *
+ * @remarks
+ * This component is a wrapper around the `div` element. It provides a number of
+ * pre-defined styles for the card.
+ *
+ * @example
+ * <Card>
+ *   <CardImage img={item.img} />
+ *   <div className="p-2">
+ *     <CardTitle>{item.title}</CardTitle>
+ *     <CardDescription>{item.des}</CardDescription>
+ *   </div>
+ * </Card>
+ *
+ * @export
+ * @param {React.ComponentPropsWithoutRef<'div'>} props The component props.
+ * @returns {React.ReactElement} The Card component.
+ */
 export const Card = memo(
   ({
     className,
@@ -113,6 +149,20 @@ export const Card = memo(
 );
 Card.displayName = "Card";
 
+/**
+ * The CardTitle component.
+ *
+ * @remarks
+ * This component is a wrapper around the `h3` element. It provides a number of
+ * pre-defined styles for the card title.
+ *
+ * @example
+ * <CardTitle>{item.title}</CardTitle>
+ *
+ * @export
+ * @param {React.ComponentPropsWithoutRef<'h3'>} props The component props.
+ * @returns {React.ReactElement} The CardTitle component.
+ */
 export const CardTitle = memo(
   ({
     className,
@@ -135,6 +185,20 @@ export const CardTitle = memo(
 );
 CardTitle.displayName = "CardTitle";
 
+/**
+ * The CardDescription component.
+ *
+ * @remarks
+ * This component is a wrapper around the `p` element. It provides a number of
+ * pre-defined styles for the card description.
+ *
+ * @example
+ * <CardDescription>{item.des}</CardDescription>
+ *
+ * @export
+ * @param {React.ComponentPropsWithoutRef<'p'>} props The component props.
+ * @returns {React.ReactElement} The CardDescription component.
+ */
 export const CardDescription = memo(
   ({
     className,
@@ -157,6 +221,20 @@ export const CardDescription = memo(
 );
 CardDescription.displayName = "CardDescription";
 
+/**
+ * The CardImage component.
+ *
+ * @remarks
+ * This component renders an image with a rounded top-left and top-right corners.
+ * The image is positioned absolutely and fills the parent element.
+ *
+ * @example
+ * <CardImage img="https://picsum.photos/200/300" />
+ *
+ * @export
+ * @param {string} img The image URL.
+ * @returns {React.ReactElement} The CardImage component.
+ */
 export const CardImage = memo(({ img }: { img: string }) => {
   return (
     <div className="h-44 sm:h-60 md:h-44 w-full relative bg-transparent transition-transform duration-300 group-hover:scale-105">

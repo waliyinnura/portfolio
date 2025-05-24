@@ -16,16 +16,29 @@ import { useCallback, useState } from "react";
 const ThemeSwitcher = dynamic(() => import("./ui/ThemeSwitcher"));
 import { ModalProvider } from "./ui/modal/AnimatedModal";
 
+/**
+ * A responsive navigation bar that adapts to different screen sizes.
+ *
+ * When the screen size is below the medium breakpoint (md), the navigation bar
+ * will be hidden and replaced with a mobile navigation menu. The mobile
+ * navigation menu is toggle-able by clicking on the hamburger icon in the top
+ * right corner.
+ *
+ * The navigation bar contains a logo, a list of navigation items, and a theme
+ * switcher. The mobile navigation menu contains the same list of navigation
+ * items as the desktop navigation bar, but with a different layout.
+ *
+ * The navigation bar is also wrapped in a ModalProvider component, which
+ * provides a context for modal windows to be opened and closed.
+ */
 export function ResizableNavbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Handler untuk toggle menu
   const handleToggleMenu = useCallback(
     () => setIsMobileMenuOpen((open) => !open),
     []
   );
 
-  // Handler untuk close menu
   const handleCloseMenu = useCallback(() => setIsMobileMenuOpen(false), []);
 
   return (

@@ -1,5 +1,27 @@
 import React from "react";
 
+/**
+ * The MagicButton component.
+ *
+ * @remarks
+ * This component renders a button with a hover effect that looks like a
+ * "magic" button. The button is rendered with a rounded corners and a
+ * gradient background. The button also has a `backdrop-blur-3xl` class to
+ * blur the background.
+ *
+ * @example
+ * <MagicButton title="Click me" icon={<FaLocationArrow />} />
+ *
+ * @param {string} title The title of the button.
+ * @param {React.ReactNode} icon The icon to be rendered on the left or right
+ * side of the button.
+ * @param {"left" | "right"} position The position of the icon.
+ * @param {(() => void) | undefined} handleClick The function to be called when
+ * the button is clicked.
+ * @param {string} [otherClasses=""] Additional classes to be added to the
+ * button.
+ * @returns {React.ReactElement} The MagicButton component.
+ */
 const MagicButton = ({
   title,
   icon,

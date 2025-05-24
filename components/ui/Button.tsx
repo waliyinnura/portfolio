@@ -40,6 +40,20 @@ export interface ButtonProps
   asChild?: boolean;
 }
 
+/**
+ * The Button component.
+ *
+ * @remarks
+ * This component is a wrapper around the `button` element. It provides a number of
+ * pre-defined styles and sizes for the button.
+ *
+ * @example
+ * <Button>Click me</Button>
+ *
+ * @export
+ * @param {ButtonProps} props The component props.
+ * @returns {JSX.Element} The Button component.
+ */
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "button";

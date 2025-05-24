@@ -20,6 +20,13 @@ const Projects = dynamic(() => import("@/components/Projects"), {
   loading: () => <div style={{ height: 400 }} />,
 });
 
+/**
+ * The main entry point of the entire app.
+ *
+ * This component will render every single other components.
+ *
+ * @returns The main entry point of the app.
+ */
 export default function Home() {
   return (
     <main className="relative w-full flex flex-col items-center justify-center overflow-hidden md:overflow-visible bg-white dark:bg-black">

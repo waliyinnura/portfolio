@@ -10,6 +10,17 @@ import {
 } from "motion/react";
 import Image from "next/image";
 
+/**
+ * A component that renders a list of items with tooltips that appear when
+ * the item is hovered. The tooltips are animated and have a springy
+ * movement effect.
+ *
+ * @param {object} props
+ * @prop {object[]} items An array of objects with the properties:
+ *   - id (number): The id of the item
+ *   - name (string): The name of the item
+ *   - image (string): The URL of the image for the item
+ */
 export const AnimatedTooltip = ({
   items,
 }: {

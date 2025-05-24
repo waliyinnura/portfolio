@@ -4,6 +4,20 @@ import { iconLeftLists, iconRightLists } from "@/data";
 import Image from "next/image";
 import { memo } from "react";
 
+/**
+ * The BentoGrid component.
+ *
+ * A responsive grid with a set of items.
+ *
+ * @remarks
+ * This component renders a responsive grid with a set of items. It is
+ * designed to be used as a top-level component in the site.
+ *
+ * @param className - The class name to be applied to the container element.
+ * @param children - The children elements to be rendered inside the container.
+ *
+ * @returns The JSX element for the BentoGrid component.
+ */
 export const BentoGrid = ({
   className,
   children,
@@ -23,6 +37,24 @@ export const BentoGrid = ({
   );
 };
 
+/**
+ * The BentoGridItem component.
+ *
+ * A single item in the BentoGrid.
+ *
+ * @remarks
+ * This component renders a single item in the BentoGrid. It is designed to be
+ * used as a child element of the BentoGrid component.
+ *
+ * @param id - The id of the item.
+ * @param title - The title of the item.
+ * @param description - The description of the item.
+ * @param className - The class name to be applied to the container element.
+ * @param titleClassName - The class name to be applied to the title element.
+ * @param bgImage - The background image of the item.
+ *
+ * @returns The JSX element for the BentoGridItem component.
+ */
 export const BentoGridItem = memo(
   ({
     id,

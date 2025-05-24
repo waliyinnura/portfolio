@@ -11,6 +11,17 @@ export const metadata: Metadata = {
   description: "Welcome on my portfolio",
 };
 
+/**
+ * The root layout component. It renders the HTML document, and wraps the
+ * children with the ThemeProvider and ModalProvider components.
+ *
+ * @param {{ children: React.ReactNode }} props The component props.
+ * @returns {JSX.Element} The RootLayout component.
+ * @example
+ * <RootLayout>
+ *   <App />
+ * </RootLayout>
+ */
 export default function RootLayout({
   children,
 }: Readonly<{

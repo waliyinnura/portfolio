@@ -19,12 +19,26 @@ type LinkPreviewProps = {
   className?: string;
   width?: number;
   height?: number;
-  //   quality?: number;
-  //   layout?: string;
+  quality?: number;
+  layout?: string;
 } & (
   | { isStatic: true; imageSrc: string }
   | { isStatic?: false; imageSrc?: never }
 );
+
+/**
+ * A component that renders a link that previews the website when hovered.
+ *
+ * @param {React.ReactNode} children The content of the link.
+ * @param {string} url The URL of the website to preview.
+ * @param {string} [className] The additional class names for the link.
+ * @param {number} [width=200] The width of the preview image.
+ * @param {number} [height=125] The height of the preview image.
+ * @param {boolean} [isStatic=false] Whether the image is a static image or
+ *   should be fetched from Microlink.
+ * @param {string} [imageSrc=""] The URL of the static image.
+ * @returns {React.ReactElement} The LinkPreview component.
+ */
 
 export const LinkPreview = ({
   children,

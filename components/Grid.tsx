@@ -9,6 +9,15 @@ const BentoGridItem = dynamic(() =>
   import("./ui/BentoGrid").then((mod) => mod.BentoGridItem)
 );
 
+/**
+ * The Grid component.
+ *
+ * @remarks
+ * This component renders the grid section of the website. It displays a
+ * responsive grid with a set of items.
+ *
+ * @returns The JSX element for the grid component.
+ */
 const Grid = memo(() => {
   return (
     <section id="about">

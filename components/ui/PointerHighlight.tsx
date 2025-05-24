@@ -3,6 +3,22 @@ import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
 import { useRef, useEffect, useState, memo } from "react";
 
+/**
+ * PointerHighlight component.
+ *
+ * @remarks
+ * This component provides a visual highlight effect around its children,
+ * using animated borders and a pointer icon. The dimensions of the highlight
+ * adapt to the size of the container dynamically via a ResizeObserver.
+ *
+ * @param {object} props - The component props.
+ * @param {React.ReactNode} props.children - The content to be highlighted.
+ * @param {string} [props.rectangleClassName] - Additional class names for the rectangle.
+ * @param {string} [props.pointerClassName] - Additional class names for the pointer icon.
+ * @param {string} [props.containerClassName] - Additional class names for the container.
+ *
+ * @returns {JSX.Element} The PointerHighlight component.
+ */
 export function PointerHighlight({
   children,
   rectangleClassName,
@@ -100,6 +116,20 @@ export function PointerHighlight({
   );
 }
 
+/**
+ * A pointer icon.
+ *
+ * @remarks
+ * This component is a wrapper around the `svg` element. It provides a number of
+ * pre-defined styles for the pointer icon.
+ *
+ * @example
+ * <Pointer className="h-5 w-5 text-blue-500" />
+ *
+ * @export
+ * @param {React.SVGProps<SVGSVGElement>} props The component props.
+ * @returns {React.ReactElement} The Pointer component.
+ */
 const Pointer = memo(({ ...props }: React.SVGProps<SVGSVGElement>) => {
   return (
     <svg

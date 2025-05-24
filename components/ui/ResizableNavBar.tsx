@@ -51,6 +51,17 @@ interface MobileNavMenuProps {
   onClose: () => void;
 }
 
+/**
+ * A responsive navigation bar that can be used as a top-level component
+ * in the site.
+ *
+ * The navbar will be visible when the user has scrolled down more than 100px
+ * and invisible otherwise.
+ *
+ * @param {NavbarProps} props The props for the Navbar component.
+ *
+ * @returns {React.ReactElement} The Navbar component.
+ */
 export const Navbar = ({ children, className }: NavbarProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll({
@@ -85,6 +96,21 @@ export const Navbar = ({ children, className }: NavbarProps) => {
   );
 };
 
+/**
+ * The NavBody component.
+ *
+ * This component renders a navigation container with optional blur and shadow
+ * effects that are activated based on the `visible` prop. It uses a spring
+ * animation for smooth transitions of its properties.
+ *
+ * @param {object} props - The component props.
+ * @param {React.ReactNode} props.children - The content to be rendered within the component.
+ * @param {string} [props.className] - Additional class names to apply to the component.
+ * @param {boolean} [props.visible] - Determines the visibility and styling effects
+ * such as blur and shadow.
+ *
+ * @returns {JSX.Element} The animated NavBody component.
+ */
 export const NavBody = ({ children, className, visible }: NavBodyProps) => {
   return (
     <motion.div
@@ -117,6 +143,21 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
   );
 };
 
+/**
+ * The NavItems component.
+ *
+ * This component renders a list of links with hover effects. It uses a spring
+ * animation for smooth transitions of its properties.
+ *
+ * @param {object} props - The component props.
+ * @param {object[]} props.items - An array of objects with the following properties:
+ *   - name (string): The name of the item to be displayed.
+ *   - link (string): The link to be opened when the item is clicked.
+ * @param {string} [props.className] - Additional class names to apply to the component.
+ * @param {function} [props.onItemClick] - A callback function to be called when an item is clicked.
+ *
+ * @returns {JSX.Element} The animated NavItems component.
+ */
 export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
   const [hovered, setHovered] = useState<number | null>(null);
 
@@ -152,6 +193,21 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
   );
 };
 
+/**
+ * The MobileNav component.
+ *
+ * This component renders a mobile navigation container with optional blur and shadow
+ * effects that are activated based on the `visible` prop. It uses a spring animation
+ * for smooth transitions of its properties.
+ *
+ * @param {object} props - The component props.
+ * @param {React.ReactNode} props.children - The content to be rendered within the component.
+ * @param {string} [props.className] - Additional class names to apply to the component.
+ * @param {boolean} [props.visible] - Determines the visibility and styling effects
+ * such as blur and shadow.
+ *
+ * @returns {JSX.Element} The animated MobileNav component.
+ */
 export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
   return (
     <motion.div
@@ -184,6 +240,18 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
   );
 };
 
+/**
+ * The MobileNavHeader component.
+ *
+ * This component renders a mobile navigation header with the logo and toggle
+ * button. It is used in the MobileNav component.
+ *
+ * @param {object} props - The component props.
+ * @param {React.ReactNode} props.children - The content to be rendered within the component.
+ * @param {string} [props.className] - Additional class names to apply to the component.
+ *
+ * @returns {JSX.Element} The MobileNavHeader component.
+ */
 export const MobileNavHeader = ({
   children,
   className,
@@ -200,6 +268,22 @@ export const MobileNavHeader = ({
   );
 };
 
+/**
+ * The MobileNavMenu component.
+ *
+ * @remarks
+ * This component renders a mobile navigation menu that slides in
+ * and out with animation. It is displayed when the `isOpen` prop
+ * is true. The menu is styled with a shadow and background color,
+ * and accepts additional class names and children elements.
+ *
+ * @param {object} props - The component props.
+ * @param {React.ReactNode} props.children - The content to be rendered within the menu.
+ * @param {string} [props.className] - Additional class names to apply to the menu.
+ * @param {boolean} props.isOpen - Determines whether the menu is visible.
+ *
+ * @returns {JSX.Element} The MobileNavMenu component.
+ */
 export const MobileNavMenu = ({
   children,
   className,
@@ -224,6 +308,19 @@ export const MobileNavMenu = ({
   );
 };
 
+/**
+ * The MobileNavToggle component.
+ *
+ * This component renders a toggle button for the mobile navigation menu. It
+ * displays either an open or close icon depending on the `isOpen` prop. The
+ * component is accessible and can be controlled with the Enter or Space key.
+ *
+ * @param {{ isOpen: boolean; onClick: () => void; }} props The component props.
+ * @param {boolean} props.isOpen Determines the visibility of the mobile navigation menu.
+ * @param {() => void} props.onClick The callback function that is called when the button is clicked.
+ *
+ * @returns {JSX.Element} The MobileNavToggle component.
+ */
 export const MobileNavToggle = ({
   isOpen,
   onClick,
@@ -256,6 +353,15 @@ export const MobileNavToggle = ({
   );
 };
 
+/**
+ * The NavbarLogo component.
+ *
+ * This component renders the logo of the website, which is a rounded
+ * image with a link to the hero section. The logo is styled with a
+ * relative z-index of 20, and has a margin right of 4rem.
+ *
+ * @returns {JSX.Element} The NavbarLogo component.
+ */
 export const NavbarLogo = () => {
   return (
     <a
@@ -283,6 +389,22 @@ type NavbarButtonProps = {
   children: React.ReactNode;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
+/**
+ * The NavbarButton component.
+ *
+ * @remarks
+ * This component renders a customizable button with several styling variants.
+ * It integrates with a modal system to open a modal on click. The button
+ * supports different visual styles through the `variant` prop and additional
+ * classes via the `className` prop.
+ *
+ * @param {NavbarButtonProps} props - The component props.
+ * @param {"primary" | "secondary" | "dark" | "gradient"} [props.variant="primary"] - The visual style of the button.
+ * @param {string} [props.className] - Additional class names to apply to the button.
+ * @param {React.ReactNode} props.children - The content to be rendered inside the button.
+ *
+ * @returns {JSX.Element} The NavbarButton component.
+ */
 export const NavbarButton: React.FC<NavbarButtonProps> = ({
   // type = 'button',
   variant = "primary",

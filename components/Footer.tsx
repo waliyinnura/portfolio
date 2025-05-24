@@ -4,6 +4,15 @@ import { socialMedia } from "@/data";
 import MagicButton from "./ui/MagicButton";
 import Image from "next/image";
 
+/**
+ * Component for displaying the footer section of the page.
+ *
+ * @remarks
+ * This component is a Next.js page component. It displays a footer section
+ * with a call-to-action button and a list of social media links.
+ *
+ * @returns The JSX element for the footer section.
+ */
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
