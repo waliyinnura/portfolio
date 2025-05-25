@@ -108,7 +108,7 @@ export const BentoGridItem = memo(
                   "absolute h-fit w-fit overflow-hidden",
                   bgImage.className
                 )}
-                priority={true}
+                loading="lazy"
                 style={{ width: "auto", height: "auto" }}
               />
             )}
