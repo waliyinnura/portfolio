@@ -109,7 +109,6 @@ export const BentoGridItem = memo(
                   bgImage.className
                 )}
                 priority={true}
-                sizes="(max-width: 768px) 50vw, 200px"
                 style={{ width: "auto", height: "auto" }}
               />
             )}
