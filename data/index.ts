@@ -12,10 +12,11 @@ export const gridItems = [
     className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[30vh]",
     titleClassName: "justify-start",
     bgImage: {
-      src: "/map.svg",
-      alt: 'map',
-      className: "-bottom-20 -right-20 md:-bottom-40 lg:-bottom-20 lg:-right-20"
-    }
+      src: "/map.webp",
+      alt: "map",
+      className:
+        "-bottom-20 -right-20 md:-bottom-40 lg:-bottom-20 lg:-right-20",
+    },
   },
   {
     id: 2,
@@ -46,10 +47,10 @@ export const gridItems = [
     className: "md:col-span-3 md:row-span-2 ",
     titleClassName: "justify-center",
     bgImage: {
-      src: "/abstract-bg.svg",
-      alt: 'abstract',
-      className: "opacity-30 top-0 -left-20 md:top-20 lg:-left-40"
-    }
+      src: "/abstract-bg.webp",
+      alt: "abstract",
+      className: "opacity-30 top-0 -left-20 md:top-20 lg:-left-40",
+    },
   },
   {
     id: 6,
@@ -74,7 +75,13 @@ export const projects = [
     title: "StarHOSPITALITY Club",
     des: "Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.",
     img: "/shc.png",
-    iconLists: ["/next.svg", "/tailwind.svg", "/ts.svg", "/stream.svg", "/c.svg"],
+    iconLists: [
+      "/next.svg",
+      "/tailwind.svg",
+      "/ts.svg",
+      "/stream.svg",
+      "/c.svg",
+    ],
     link: "https://starhospitality.club",
   },
   {
@@ -90,7 +97,13 @@ export const projects = [
     title: "Ecommerce Template",
     des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
     img: "/ecommerce.png",
-    iconLists: ["/next.svg", "/tailwind.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
+    iconLists: [
+      "/next.svg",
+      "/tailwind.svg",
+      "/ts.svg",
+      "/three.svg",
+      "/gsap.svg",
+    ],
     link: "https://badlixvictoryu.vercel.app/",
   },
 ];
