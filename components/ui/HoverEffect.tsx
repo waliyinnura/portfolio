@@ -242,7 +242,6 @@ export const CardImage = memo(({ img }: { img: string }) => {
         src={img}
         alt="cover"
         fill
-        sizes="100%"
         loading="lazy"
         className="rounded-t-2xl absolute inset-0 object-cover object-center mix-blend-multiply"
       />
