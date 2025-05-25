@@ -10,7 +10,7 @@ export const gridItems = [
     title: "I'm very flexible with time zone communications",
     description: "",
     className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[30vh]",
-    titleClassName: "justify-start",
+    titleClassName: "justify-center md:justify-start",
     bgImage: {
       src: "/map.svg",
       alt: "map",

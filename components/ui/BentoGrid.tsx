@@ -102,10 +102,10 @@ export const BentoGridItem = memo(
               <Image
                 src={bgImage.src}
                 alt={bgImage.alt}
-                width={50}
-                height={50}
+                width={100}
+                height={100}
                 className={cn(
-                  "absolute h-fit w-fit overflow-hidden",
+                  "absolute h-fit w-fit overflow-hidden hidden md:block",
                   bgImage.className
                 )}
                 priority={true}
