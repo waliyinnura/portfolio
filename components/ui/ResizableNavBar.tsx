@@ -373,6 +373,7 @@ export const NavbarLogo = () => {
         alt="logo"
         width={30}
         height={30}
+        priority={true}
         className="rounded-sm"
       />
       <span className="font-medium text-neutral-700 dark:text-neutral-400">

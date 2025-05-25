@@ -12,7 +12,7 @@ export const gridItems = [
     className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[30vh]",
     titleClassName: "justify-start",
     bgImage: {
-      src: "/map-1.svg",
+      src: "/map.svg",
       alt: "map",
       className:
         "-bottom-20 -right-20 md:-bottom-40 lg:-bottom-20 lg:-right-20",
@@ -47,7 +47,7 @@ export const gridItems = [
     className: "md:col-span-3 md:row-span-2 ",
     titleClassName: "justify-center",
     bgImage: {
-      src: "/abstract-bg-1.svg",
+      src: "/abstract-bg.svg",
       alt: "abstract",
       className: "opacity-30 top-0 -left-20 md:top-20 lg:-left-40",
     },

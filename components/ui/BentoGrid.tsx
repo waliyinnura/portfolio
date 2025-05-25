@@ -102,8 +102,8 @@ export const BentoGridItem = memo(
               <Image
                 src={bgImage.src}
                 alt={bgImage.alt}
-                width={100}
-                height={100}
+                width={50}
+                height={50}
                 className={cn(
                   "absolute h-fit w-fit overflow-hidden",
                   bgImage.className
@@ -126,6 +126,7 @@ export const BentoGridItem = memo(
                         width={100}
                         src={item.image}
                         alt={item.name}
+                        loading="lazy"
                         className="relative !m-0 object-cover object-top !p-0 transition duration-500 group-hover:z-[999] group-hover:scale-105 bg-transparent lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
                       />
                     </div>
@@ -142,6 +143,7 @@ export const BentoGridItem = memo(
                         width={100}
                         src={item.image}
                         alt={item.name}
+                        loading="lazy"
                         className="relative !m-0 object-cover object-top !p-0 transition duration-500 group-hover:z-[999] group-hover:scale-105 bg-transparent lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
                       />
                     </span>
