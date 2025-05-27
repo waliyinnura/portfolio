@@ -4,7 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "./provider";
 import { ModalProvider } from "@/components/ui/modal/AnimatedModal";
 
-const inter = Open_Sans({ subsets: ["latin"] });
+const openSans = Open_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Well Portfolio",
@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
-      <body className={inter.className}>
+      <body className={openSans.className}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
