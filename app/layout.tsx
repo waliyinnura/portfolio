@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import { ThemeProvider } from "./provider";
 import { ModalProvider } from "@/components/ui/modal/AnimatedModal";
@@ -39,6 +40,7 @@ export default function RootLayout({
         >
           <ModalProvider>{children}</ModalProvider>
         </ThemeProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
